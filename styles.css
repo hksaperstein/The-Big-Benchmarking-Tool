@@ -1,0 +1,9 @@
+ #cTool{
+     border-collapse: collapse;
+     border: 1px solid black;
+     width: 85%;
+}
+#cTool, #cTool tr,#cTool td {
+    border: 1px solid black;
+}
+#cTool tr:nth-child(even) {background-color: #e3e6e8;}
