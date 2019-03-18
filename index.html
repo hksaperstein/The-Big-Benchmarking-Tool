@@ -1,37 +1,41 @@
 <!DOCTYPE html>
-<script src="curriculum_functions.js" type="text/javascript"></script>
-<script src="output_functions.js" type="text/javascript"></script>
+<script src="javascript/curriculum_functions.js" type="text/javascript"></script>
+<script src="javascript/research_functions.js" type="text/javascript"></script>
+<script src="javascript/output_functions.js" type="text/javascript"></script>
 
 <html lang="eng">
     <link rel="stylesheet" href="styles.css">
     <head>
         <title>The Big Benchmarking Tool</title>
     </head>
-
     <body>
         <h1>The Big Benchmarking Tool</h1>
-        <h4 id='date'></h4>
     </body>
+
     <a href="./ModuleAnalyzer.zip" id="m_analyzer">
         Module Analyzer
     </a>
-
+    <p></p>
     <a href="./ResearchAnalyzer.zip" id="r_analyzer">
         Research Analyzer
     </a>
+
     <table id="cTool">
         <caption>The Curriculum Tool</caption>
-        <th>
-            <td>
+        <!--Header-->
+        <tr>
+            <th colspan="2">
                 Questions
-            </td>
-            <td>
+            </th>
+            <th>
                 Answer/Input
-            </td>
-            <td>
+            </th>
+            <th>
                 Score
-            </td>
-        </th>
+            </th>
+        </tr>
+
+        <!--Question C1-->
         <tr id="C1">
             <td>
                 C1
@@ -40,10 +44,12 @@
                 Number of courses that include sustainability related topics, themes, or modules, relative to the total number of undergraduate courses offered at the institution, as a percentage
             </td>
             <td>
-                <input type="text" placeholder="Percentage (%)" id="c1_answer" value="" />
+                <input type="text" placeholder="Percentage (%)" id="c1_answer" value="" onchange="max_val_output(20, 'c1_answer', 'c1_score')"/>
             </td>
             <td id="c1_score"></td>
         </tr>
+
+        <!--Question C2-->
         <tr>
             <td>
                C2
@@ -52,11 +58,12 @@
                 Number of modules that include sustainability-related topics or themes, relative to the total number of modules offered at the institution, as a percentage 
             </td>
             <td>
-                <input type="text" placeholder="Percentage (%)" id="c2_answer" value=""/>
+                <input type="text" placeholder="Percentage (%)" id="c2_answer" value="" onchange="max_val_output(20, 'c2_answer', 'c2_score')"/>
             </td>
             <td id="c2_score"></td>
         </tr>
 
+        <!--Question C3-->
         <tr>
             <td>
                C3
@@ -65,11 +72,12 @@
                 Number of undergraduate students who have taken a sustainability-related module in relation to total number of students enrolled at the institution, as a percentage. Score x2
             </td>
             <td>
-                <input type="text" placeholder="Percentage (%)" id="c3_answer" value=""/>
+                <input type="text" placeholder="Percentage (%)" id="c3_answer" value="" onchange="max_val_output(80, 'c3_answer', 'c3_score')"/>
             </td>
             <td id="c3_score"></td>
         </tr>
 
+        <!--Question C4-->
         <tr>
             <td>
                 C4
@@ -78,11 +86,12 @@
                 Number of departments at the university that include sustainability in their curricula in relation to the total number of departments/colleges at the university, as a percentage. 
             </td>
             <td>
-                <input type="text" placeholder="Percentage (%)" id="c4_answer" value=""/>
+                <input type="text" placeholder="Percentage (%)" id="c4_answer" value="" onchange="max_val_output(80, 'c4_answer', 'c4_score')"/>
             </td>
             <td id="c4_score"></td>
         </tr>
 
+        <!--Question C5-->
         <tr>
             <td>
                 C5
@@ -91,11 +100,12 @@
                 Number of student organizations with a purpose directly related to sustainability.
             </td>
             <td>
-                <input type="text" placeholder="Number of Student Organizations" id="c5_answer" value=""/>
+                <input type="text" placeholder="Number of Student Organizations" id="c5_answer" value="" onchange="max_val_output(4, 'c5_answer', 'c5_score')"/>
             </td>
             <td id="c5_score"></td>
         </tr>
 
+        <!--Question C6-->
         <tr>
             <td>
                 C6
@@ -104,10 +114,20 @@
                 Does the institution maintain a sustainability website updated at least every 6 months?
             </td>
             <td>
-                <input type="text" placeholder="Yes/No" id="c6_answer" value=""/>
+                <input type="radio" id="c6_yes" name="c6_answer" value="y" onclick="yes_no_output(3, 'c6_answer', 'c6_score')">
+                    <label for="c6_yes">
+                        Yes
+                    </label>
+
+                <input type="radio" id="c6_no" name="c6_answer" value="n" onclick="yes_no_output(3, 'c6_answer', 'c6_score')">
+                    <label for="c6_no">
+                        No
+                    </label>
             </td>
             <td id="c6_score"></td>
         </tr>
+
+        <!--Question C7-->
         <tr>
             <td>
                 C7
@@ -116,10 +136,12 @@
                 Number of university wide sustainability-focused educational programs or events offered by the student union in the last year.
             </td>
             <td>
-                <input type="text" placeholder="Number of Events/Programs" id="c7_answer" value=""/>
+                <input type="text" placeholder="Number of Events/Programs" id="c7_answer" value="" onchange="max_val_output(3, 'c7_answer', 'c7_score')"/>
             </td>
             <td id="c7_score"></td>
         </tr>
+
+        <!--Question C8-->
         <tr>
             <td>
                 C8
@@ -128,10 +150,12 @@
                 Average score of students on an assessment of the sustainability literacy and knowledge as a percentage.  If assessment is not conducted mark 0.  
             </td>
             <td>
-                <input type="text" placeholder="Percentage (%)" id="c8_answer" value=""/>
+                <input type="text" placeholder="Percentage (%)" id="c8_answer" value="" onchange="max_val_output(80, 'c8_answer', 'c8_score')"/>
             </td>
             <td id="c8_score"></td>
         </tr>
+
+        <!--Question C9-->
         <tr>
             <td>
                 C9
@@ -140,10 +164,20 @@
                 Does the institution have an ongoing program that offers incentives for academic staff in multiple disciplines or departments to develop new sustainability modules and/or incorporate sustainability into existing modules?
             </td>
             <td>
-                <input type="text" placeholder="Yes/No" id="c9_answer" value=""/>
+                <input type="radio" id="c9_yes" name="c9_answer" value="y" onclick="yes_no_output(5, 'c9_answer', 'c9_score')">
+                    <label for="c9_yes">
+                        Yes
+                    </label>
+
+                <input type="radio" id="c9_no" name="c9_answer" value="n" onclick="yes_no_output(5, 'c9_answer', 'c9_score')">
+                    <label for="c9_no">
+                        No
+                    </label>
             </td>
             <td id="c9_score"></td>
         </tr>
+
+        <!--Question C10-->
         <tr>
             <td>
                 C10
@@ -152,186 +186,236 @@
                 Is the institution utilizing its campus by having physical locations which specialize in the following areas of sustainability? ● Air & Climate ● Buildings ● Energy ● Food & Dining ● Grounds ● Purchasing ● Transportation ● Waste ● Water ● Coordination & Planning ● Diversity & Affordability ● Investment & Finance ● Public Engagement ● Wellbeing & Work
             </td>
             <td>
-                <input type="text" placeholder="answer" id="c10_answer" value=""/>
+                <input type="text" placeholder="answer" id="c10_answer" value="" onchange="max_val_output(15, 'c10_answer', 'c10_score')"/>
             </td>
             <td id="c10_score"></td>
         </tr>
+
+        <!--Curriculum Tool Total-->
         <tr>
             <td colspan="3">
-                total
+                Total (out of 50)
             </td>
             <td id="c_score"></td>
         </tr>
     </table>
-    <button onclick="curriculum_output()">
+    <button onclick="c_total_output()">
         Submit Curriculum Tool
     </button>
+
     <table id="rTool">
         <caption>The Research Tool</caption>
+
+        <!--Header-->
         <tr>
-            <td></td>
-            <td>
+            <th colspan="2">
                 Questions
-            </td>
-            <td>
+            </th>
+            <th>
                 Answer/Input
-            </td>
-            <td>
+            </th>
+            <th>
                 Score
-            </td>
+            </th>
         </tr>
-        <tr id="R1">
+
+        <!--Question R1-->
+        <tr>
             <td>
                 R1
             </td>
             <td>
-                Question R1
+                Amount of funding from grants and contracts specifying sustainability-related research, relative to the total funding from grants and contracts at the institution, as a percentage. 
             </td>
             <td>
-                <input type="text" placeholder="Answer here" id="r1_answer" value=""/>
+                <input type="text" placeholder="Answer here" id="r1_answer" value="" onchange="max_val_output(20, 'r1_answer', 'r1_score')"/>
             </td>
-            <td id="r1_score">
-                score R1
-            </td>
+            <td id="r1_score"></td>
         </tr>
+
+        <!--Question R2-->
         <tr>
             <td>
                 R2
             </td>
             <td>
-                Question R2
+                Number of published research articles with a focus on sustainability-related issues, relative to the total number of research publications in all areas, as a percentage.
             </td>
             <td>
-                <input type="text" placeholder="Answer here" id="r2_answer" value=""/>
+                <input type="text" placeholder="Answer here" id="r2_answer" value="" onchange="max_val_output(15, 'r2_answer', 'r2_score')"/>
             </td>
-            <td id="r2_score">
-                score R2
-            </td>
+            <td id="r2_score"></td>
         </tr>
 
+        <!--Question R3-->
         <tr>
             <td>
                 R3
             </td>
             <td>
-                Question R3
+                Number of the institution’s academic staff that are currently engaged in sustainability research, relative to the total amount of academic staff who conduct research, as a percentage. 
             </td>
             <td>
-                <input type="text" placeholder="Answer here" id="r3_answer" value=""/>
+                <input type="text" placeholder="Answer here" id="r3_answer" value="" onchange="max_val_output(32, 'r3_answer', 'r3_score')"/>
             </td>
-            <td id="r3_score">
-                score R3
-            </td>
+            <td id="r3_score"></td>
         </tr>
 
+        <!--Question R4-->
         <tr>
             <td>
                 R4
             </td>
             <td>
-                Question R4
+                Number of academic departments that include at least one academic staff member that conducts sustainability research compared to other areas of research, relative to the total number of academic departments, as a percentage.
             </td>
             <td>
-                <input type="text" placeholder="Answer here" id="r4_answer" value=""/>
+                <input type="text" placeholder="Number of Departments" id="r4_answer" value="" onchange="max_val_output(60, 'r4_answer', 'r4_score')"/>
             </td>
-            <td id="r4_score">
-                score R4
-            </td>
+            <td id="r4_score"></td>
         </tr>
 
+        <!--Question R5-->
         <tr>
             <td>
                 R5
             </td>
             <td>
-                Question R5
+                Does there exist one or more resource centres on campus providing sustainability-related research or services?
             </td>
             <td>
-                <input type="text" placeholder="Answer here" id="r5_answer" value=""/>
+                <input type="radio" id="r5_yes" name="r5_answer" value="y" onclick="yes_no_output(5, 'r5_answer', 'r5_score')">
+                    <label for="r5_yes">
+                        Yes
+                    </label>
+
+                <input type="radio" id="r5_no" name="r5_answer" value="n" onclick="yes_no_output(5, 'r5_answer', 'r5_score')">
+                    <label for="r5_no">
+                        No
+                    </label>
             </td>
-            <td id="r5_score">
-                score R5
-            </td>
+            <td id="r5_score"></td>
         </tr>
 
+        <!--Question R6-->
         <tr>
             <td>
                 R6
             </td>
             <td>
-                Question R6
+                Does the institution have an ongoing program to encourage students in multiple disciplines or academic programs to conduct research in sustainability?
             </td>
             <td>
-                <input type="text" placeholder="Answer here" id="r6_answer" value=""/>
+                <input type="radio" id="r6_yes" name="r6_answer" value="y" onclick="yes_no_output(5, 'r6_answer', 'r6_score')">
+                    <label for="r6_yes">
+                        Yes
+                    </label>
+
+                <input type="radio" id="r6_no" name="r6_answer" value="n" onclick="yes_no_output(5, 'r6_answer', 'r6_score')">
+                    <label for="r6_no">
+                        No
+                    </label>
             </td>
-            <td id="r6_score">
-                score R6
-            </td>
+            <td id="r6_score"></td>
         </tr>
+
+        <!--Question R7-->
         <tr>
             <td>
                 R7
             </td>
             <td>
-                Question R7
+                Does the institution have a program to encourage academic staff from multiple disciplines or academic programs to conduct research in sustainability topics? (To count, the program must provide faculty with incentives to research sustainability and specifically aim to increase faculty sustainability research) 
             </td>
             <td>
-                <input type="text" placeholder="Answer here" id="r7_answer" value=""/>
+                <input type="radio" id="r7_yes" name="r7_answer" value="y" onclick="yes_no_output(5, 'r7_answer', 'r7_score')">
+                    <label for="r7_yes">
+                        Yes
+                    </label>
+
+                <input type="radio" id="r7_no" name="r7_answer" value="n" onclick="yes_no_output(5, 'r7_answer', 'r7_score')">
+                    <label for="r7_no">
+                        No
+                    </label>
             </td>
-            <td id="r7_score">
-                score R7
-            </td>
+            <td id="r7_score"></td>
         </tr>
+
+        <!--Question R8-->
         <tr>
             <td>
                 R8
             </td>
             <td>
-                Question R8
+                Has the institution published written policies and procedures that give positive recognition to interdisciplinary, transdisciplinary, and multidisciplinary research during faculty promotion and/or tenure decisions?
             </td>
             <td>
-                <input type="text" placeholder="Answer here" id="r8_answer" value=""/>
+                <input type="radio" id="r8_yes" name="r8_answer" value="y" onclick="yes_no_output(5, 'r8_answer', 'r8_score')">
+                    <label for="r8_yes">
+                        Yes
+                    </label>
+
+                <input type="radio" id="r8_no" name="r8_answer" value="n" onclick="yes_no_output(5, 'r8_answer', 'r8_score')">
+                    <label for="r8_no">
+                        No
+                    </label>
             </td>
-            <td id="r8_score">
-                score R8
-            </td>
+            <td id="r8_score"></td>
         </tr>
+
+        <!--Question R9-->
         <tr>
             <td>
                 R9
             </td>
             <td>
-                Question R9
+                Does the institution have ongoing library support for sustainability research and learning in the form of research guides, materials selection policies and practices, curriculum development efforts, sustainability literacy promotion, and/or e-learning objects focused on sustainability?
             </td>
             <td>
-                <input type="text" placeholder="Answer here" id="r9_answer" value=""/>
+                <input type="radio" id="r9_yes" name="r9_answer" value="y" onclick="yes_no_output(5, 'r9_answer', 'r9_score')">
+                    <label for="r9_yes">
+                        Yes
+                    </label>
+                <input type="radio" id="r9_no" name="r9_answer" value="n" onclick="yes_no_output(5, 'r9_answer', 'r9_score')">
+                    <label for="r9_no">
+                        No
+                    </label>
             </td>
-            <td id="r9_score">
-                score R9
-            </td>
+            <td id="r9_score"></td>
         </tr>
+
+        <!--Question R10-->
         <tr>
             <td>
                 R10
             </td>
             <td>
-                Question R10
+                Does the institution provide financial incentives to support open access publishing, e.g., a publishing fund to support faculty members with article processing and other open access publication charges?
             </td>
             <td>
-                <input type="text" placeholder="Answer here" id="r10_answer" value=""/>
+                <input type="radio" id="r10_yes" name="r10_answer" value="y" onclick="yes_no_output(5, 'r10_answer', 'r10_score')">
+                <label for="r10_yes">
+                    Yes
+                </label>
+                <input type="radio" id="r10_no" name="r10_answer" value="n" onclick="yes_no_output(5, 'r10_answer', 'r10_score')">
+                <label for="r10_no">
+                    No
+                </label>
             </td>
-            <td id="r10_score">
-                score R10
-            </td>
+            <td id="r10_score"></td>
         </tr>
+
+        <!--Research Tool Total-->
         <tr>
             <td colspan="3">
-                total
+                Total Score (out of 50)
             </td>
             <td id="r_score">
-                score
+                Total Score
             </td>
         </tr>
     </table>
+    <button onclick="r_total_output()">
+        Submit Research Tool
+    </button>
 </html>
-<script async src="output_functions.js"></script>

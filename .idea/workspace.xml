@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c7c60ea4-9463-4ebc-9103-4d9de8f2c18e" name="Default Changelist" comment="" />
+    <list default="true" id="c7c60ea4-9463-4ebc-9103-4d9de8f2c18e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/curriculum_functions.js" beforeDir="false" afterPath="$PROJECT_DIR$/javascript/curriculum_functions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output_functions.js" beforeDir="false" afterPath="$PROJECT_DIR$/javascript/output_functions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles.css" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -10,43 +16,52 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
+            <state relative-caret-position="462">
+              <caret line="205" selection-start-line="205" selection-end-line="205" />
+              <folding>
+                <element signature="n#a#0;n#html#0;n#!!top" />
+                <element signature="n#a#1;n#html#0;n#!!top" />
+                <element signature="n#table#0;n#html#0;n#!!top" />
+                <element signature="n#tr#0;n#table#0;n#html#0;n#!!top" />
+                <element signature="n#tr#1;n#table#0;n#html#0;n#!!top" />
+                <element signature="n#tr#2;n#table#0;n#html#0;n#!!top" />
+                <element signature="n#tr#3;n#table#0;n#html#0;n#!!top" />
+                <element signature="n#tr#4;n#table#0;n#html#0;n#!!top" />
+                <element signature="n#tr#5;n#table#0;n#html#0;n#!!top" />
+                <element signature="n#tr#6;n#table#0;n#html#0;n#!!top" />
+                <element signature="n#tr#7;n#table#0;n#html#0;n#!!top" />
+                <element signature="n#tr#8;n#table#0;n#html#0;n#!!top" />
+                <element signature="n#tr#9;n#table#0;n#html#0;n#!!top" />
+                <element signature="n#tr#10;n#table#0;n#html#0;n#!!top" />
+                <element signature="n#tr#11;n#table#0;n#html#0;n#!!top" />
+                <element signature="n#button#0;n#html#0;n#!!top" />
+                <element signature="n#table#1;n#html#0;n#!!top" />
+                <element signature="n#tr#0;n#table#1;n#html#0;n#!!top" />
+                <element signature="n#tr#0;n#table#1;n#html#0;n#!!top" />
+                <element signature="n#tr#1;n#table#1;n#html#0;n#!!top" />
+                <element signature="n#tr#2;n#table#1;n#html#0;n#!!top" />
+                <element signature="n#tr#3;n#table#1;n#html#0;n#!!top" />
+                <element signature="n#tr#4;n#table#1;n#html#0;n#!!top" />
+                <element signature="n#tr#5;n#table#1;n#html#0;n#!!top" />
+                <element signature="n#tr#6;n#table#1;n#html#0;n#!!top" />
+                <element signature="n#tr#7;n#table#1;n#html#0;n#!!top" />
+                <element signature="n#tr#8;n#table#1;n#html#0;n#!!top" />
+                <element signature="n#tr#9;n#table#1;n#html#0;n#!!top" />
+                <element signature="n#tr#10;n#table#1;n#html#0;n#!!top" />
+                <element signature="n#button#1;n#html#0;n#!!top" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/styles.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/output_functions.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
-              <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/curriculum_functions.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2662">
-              <caret line="172" column="38" selection-start-line="172" selection-start-column="38" selection-end-line="172" selection-end-column="38" />
-              <folding>
-                <element signature="n#!!block;n#c1_output#0" />
-                <element signature="n#!!block;n#c6_output#0" />
-                <element signature="n#!!block;n#c7_output#0" />
-              </folding>
+            <state relative-caret-position="594">
+              <caret line="27" column="18" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -57,8 +72,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -70,24 +85,35 @@
       <replace>total</replace>
     </replaceStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/jacascript/index.js" />
         <option value="$PROJECT_DIR$/javascript/index.js" />
         <option value="$PROJECT_DIR$/index.js" />
-        <option value="$PROJECT_DIR$/output_functions.js" />
         <option value="$PROJECT_DIR$/style.css" />
         <option value="$PROJECT_DIR$/curriculum_functions.js" />
+        <option value="$PROJECT_DIR$/output_functions.js" />
+        <option value="$PROJECT_DIR$/research_functions.js" />
+        <option value="$PROJECT_DIR$/javascript/curriculum_functions.js" />
+        <option value="$PROJECT_DIR$/javascript/output_functions.js" />
+        <option value="$PROJECT_DIR$/javascript/research_functions.js" />
         <option value="$PROJECT_DIR$/styles.css" />
         <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="1490" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1206" />
+    <option name="y" value="126" />
     <option name="width" value="1522" />
     <option name="height" value="2012" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -100,6 +126,11 @@
             <path>
               <item name="TheBigBenchmarkingTool" type="b2602c69:ProjectViewProjectNode" />
               <item name="TheBigBenchmarkingTool" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TheBigBenchmarkingTool" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TheBigBenchmarkingTool" type="462c0819:PsiDirectoryNode" />
+              <item name="javascript" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -118,6 +149,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Harry\Desktop\TheBigBenchmarkingTool\javascript" />
       <recent name="C:\Users\Harry\Documents\PhpstormProjects\TheBigBenchmarkingTool" />
     </key>
   </component>
@@ -145,18 +177,18 @@
       <updated>1552767416506</updated>
       <workItem from="1552767418031" duration="10203000" />
       <workItem from="1552780836162" duration="944000" />
-      <workItem from="1552857044704" duration="126000" />
+      <workItem from="1552857044704" duration="12672000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11273000" />
+    <option name="totallyTimeSpent" value="23819000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="745" y="0" width="761" height="1006" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.41536275" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27738264" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -181,36 +213,83 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/output_functions.js">
+    <entry file="file://$PROJECT_DIR$/javascript/curriculum_functions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
+        <state relative-caret-position="-3147">
+          <caret line="1" selection-start-line="1" selection-start-column="3" selection-end-line="173" selection-end-column="4" />
+          <folding>
+            <element signature="n#!!block;n#percent_output#0" />
+            <element signature="n#!!block;n#yes_no_output#0" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/curriculum_functions.js">
+    <entry file="file://$PROJECT_DIR$/javascript/output_functions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2662">
-          <caret line="172" column="38" selection-start-line="172" selection-start-column="38" selection-end-line="172" selection-end-column="38" />
+        <state relative-caret-position="44">
+          <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
           <folding>
-            <element signature="n#!!block;n#c1_output#0" />
-            <element signature="n#!!block;n#c6_output#0" />
-            <element signature="n#!!block;n#c7_output#0" />
+            <element signature="n#!!block;n#r_total_output#0" />
+            <element signature="n#!!block;n#c_total_output#0" />
+            <element signature="n#!!block;n#max_val_output#0" />
+            <element signature="n#!!block;n#yes_no_output#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/javascript/research_functions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret lean-forward="true" selection-start-column="2" selection-end-line="183" selection-end-column="4" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="205" selection-start-line="205" selection-end-line="205" />
+          <folding>
+            <element signature="n#a#0;n#html#0;n#!!top" />
+            <element signature="n#a#1;n#html#0;n#!!top" />
+            <element signature="n#table#0;n#html#0;n#!!top" />
+            <element signature="n#tr#0;n#table#0;n#html#0;n#!!top" />
+            <element signature="n#tr#1;n#table#0;n#html#0;n#!!top" />
+            <element signature="n#tr#2;n#table#0;n#html#0;n#!!top" />
+            <element signature="n#tr#3;n#table#0;n#html#0;n#!!top" />
+            <element signature="n#tr#4;n#table#0;n#html#0;n#!!top" />
+            <element signature="n#tr#5;n#table#0;n#html#0;n#!!top" />
+            <element signature="n#tr#6;n#table#0;n#html#0;n#!!top" />
+            <element signature="n#tr#7;n#table#0;n#html#0;n#!!top" />
+            <element signature="n#tr#8;n#table#0;n#html#0;n#!!top" />
+            <element signature="n#tr#9;n#table#0;n#html#0;n#!!top" />
+            <element signature="n#tr#10;n#table#0;n#html#0;n#!!top" />
+            <element signature="n#tr#11;n#table#0;n#html#0;n#!!top" />
+            <element signature="n#button#0;n#html#0;n#!!top" />
+            <element signature="n#table#1;n#html#0;n#!!top" />
+            <element signature="n#tr#0;n#table#1;n#html#0;n#!!top" />
+            <element signature="n#tr#0;n#table#1;n#html#0;n#!!top" />
+            <element signature="n#tr#1;n#table#1;n#html#0;n#!!top" />
+            <element signature="n#tr#2;n#table#1;n#html#0;n#!!top" />
+            <element signature="n#tr#3;n#table#1;n#html#0;n#!!top" />
+            <element signature="n#tr#4;n#table#1;n#html#0;n#!!top" />
+            <element signature="n#tr#5;n#table#1;n#html#0;n#!!top" />
+            <element signature="n#tr#6;n#table#1;n#html#0;n#!!top" />
+            <element signature="n#tr#7;n#table#1;n#html#0;n#!!top" />
+            <element signature="n#tr#8;n#table#1;n#html#0;n#!!top" />
+            <element signature="n#tr#9;n#table#1;n#html#0;n#!!top" />
+            <element signature="n#tr#10;n#table#1;n#html#0;n#!!top" />
+            <element signature="n#button#1;n#html#0;n#!!top" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/styles.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
+        <state relative-caret-position="594">
+          <caret line="27" column="18" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
         </state>
       </provider>
     </entry>
