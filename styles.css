@@ -1,27 +1,4 @@
- table {
-     border-collapse: collapse;
-     border: 1px solid black;
-     width: 85%;
-     margin-left: auto;
-     margin-right: auto;
- }
-table, tr, td, th{
-    border: 1px solid black;
-    padding-left: 5px;
-    padding-right: 5px;
-}
-table tr:nth-child(even) {background-color: #e3e6e8;}
-table th{
-    background-color: lightblue;
-}
-caption{
-    text-align: Center;
-    margin-bottom: 5px;
-    font-size: 160%;
-    padding: 5px;
 
-    font-weight: bold;
-}
 h1{
     text-align: Center;
     margin-bottom: 5px;
@@ -29,8 +6,112 @@ h1{
     padding: 5px;
     font-weight: bold;
 }
+input{
+    background-color: lightblue;
+    color: #02378c;
+    width: 300px;
+    /*height: 50px;*/
+    border-radius: 10px;
+    text-align: center;
+    font-size: 30px;
 
-/*input[type=text]{*/
+
+}
+.start_buttons{
+    margin: auto;
+    width: auto;
+
+    padding: 10px;
+}
+
+ /* The side navigation menu */
+ .sidenav {
+     height: 100%; /* 100% Full-height */
+     width: 0; /* 0 width - change this with JavaScript */
+     position: fixed; /* Stay in place */
+     z-index: 1; /* Stay on top */
+     top: 0; /* Stay at the top */
+     right: 0;
+     background-color: lightblue; /* Black*/
+     overflow-x: hidden; /* Disable horizontal scroll */
+     padding-top: 60px; /* Place content 60px from the top */
+     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+ }
+
+ /* The navigation menu links */
+ .sidenav a {
+     padding: 8px 8px 8px 32px;
+     text-decoration: none;
+     font-size: 25px;
+     color: #818181;
+     display: block;
+     transition: 0.3s;
+ }
+
+ /* When you mouse over the navigation links, change their color */
+ .sidenav a:hover {
+     color: #02378c;
+     font-weight: bold;
+ }
+
+ /* Position and style the close button (top right corner) */
+ .sidenav .close {
+     position: absolute;
+     top: 0;
+     left: 0;
+     font-size: 36px;
+     margin-right: 50px;
+ }
+
+ /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+ #main_text {
+     transition: margin-left .5s;
+     padding: -20px;
+ }
+
+ /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+ @media screen and (max-height: 450px) {
+     .sidenav {padding-top: 15px;}
+     .sidenav a {font-size: 18px;}
+ }
+
+ .container {
+     position: absolute;
+     top: 0;
+     right: 0;
+     font-size: 36px;
+     margin-left: 50px;
+     padding: 15px;
+     display: inline-block;
+     cursor: pointer;
+ }
+ .container:hover{
+     : #02378c;
+     /*font-weight: bold;*/
+ }
+
+ .bar1, .bar2, .bar3 {
+     width: 35px;
+     height: 5px;
+     background-color: #02378c;
+     margin: 6px 0;
+     transition: 0.4s;
+ }
+
+ /* Rotate first bar */
+ .change .bar1 {
+     -webkit-transform: rotate(45deg) translateZ(0);
+     transform: rotate(45deg) translateZ(0);
+ }
+
+ .change .bar2 {opacity: 0;}
+
+ .change .bar3 {
+     -webkit-transform: rotate(-45deg) translateZ(0);
+     transform: rotate(-45deg) translateY(5px);
+ }
+
+ /*input[type=text]{*/
     /*width: 100%;*/
     /*margin: 0px;*/
     /*box-sizing: border-box;*/
