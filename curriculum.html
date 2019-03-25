@@ -1,92 +1,172 @@
 <!DOCTYPE html>
-<script src="Curriculum.js" type="text/javascript"></script>
+<script src="javascript/Curriculum.js" type="text/javascript"></script>
+<script src="javascript/modals.js" type="text/javascript"></script>
 <html lang="en">
 
-<link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<head>
-    <meta charset="UTF-8">
-    <title>Curriculum Tool</title>
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css">
+    <head>
+        <meta charset="UTF-8">
+        <title>Curriculum Tool</title>
+    </head>
+    <body>
 
-    <h1> Curriculum Tool </h1>
-    <h2> Insert File </h2>
-    <h3>Formal Curriculum</h3>
-    <form>
-        Select a file (.csv):  <input type="file" name="myFile" accept=".csv">
+        <h1> Curriculum Tool </h1>
+        <h2> Insert File </h2>
+        <p>
+            Select a file (.csv):  <input type="file" name="myFile" accept=".csv">
+        </p>
+        <h3>Formal Curriculum</h3>
+        <form>
+            <h4> C1 </h4>
+            <div>
+                <p>
+                    Question info
+                </p>
+                <input type="number" placeholder="answer">
+                <input type="button" value="More info" onclick="open_modal(1)">
+            </div>
 
-
-        <h4> C1 </h4>
-        <div>
+            <h4> C2 </h4>
             <p>
                 Question info
             </p>
             <input type="number" placeholder="answer">
-            <input type="button" value="More info" onclick="document.getElementById('id01').style.display='block'">
+            <input type="button" value="More info" onclick="open_modal(2)">
+            <h4> C3 </h4>
+            <p>
+                Question info
+            </p>
+            <input type="number" placeholder="answer">
+            <input type="button" value="More info" onclick="open_modal(3)">
+            <h4> C4 </h4>
+            <p>
+                Question info
+            </p>
+            <input type="number" placeholder="answer">
+            <input type="button" value="More info" onclick="open_modal(4)">
+            <h3> Informal Curriculum </h3>
+            <h4> C5 </h4>
+            <p>
+                Question info
+            </p>
+            <input type="number" placeholder="answer">
+            <input type="button" value="More info" onclick="open_modal(5)">
+            <h4> C6 </h4>
+            <p>
+                Question info
+            </p>
+            <input type="number" placeholder="answer">
+            <input type="button" value="More info" onclick="open_modal(6)">
+            <h4> C7 </h4>
+            <p>
+                Question info
+            </p>
+            <input type="number" placeholder="answer">
+            <input type="button" value="More info" onclick="open_modal(7)">
+            <h4> C8 </h4>
+            <p>
+                Question info
+            </p>
+            <input type="number" placeholder="answer">
+            <input type="button" value="More info" onclick="open_modal(8)">
+            <h4> C9 </h4>
+            <p>
+                Question info
+            </p>
+            <input type="number" placeholder="answer">
+            <input type="button" value="More info" onclick="open_modal(9)">
+            <h4> C10 </h4>
+            <p>
+                Question info
+            </p>
+            <input type="number" placeholder="answer">
+            <input type="button" value="More info" onclick="open_modal(10)">
+        </form>
+
+
+        <!--MODAL-->
+        <div id="modal" class="modal">
+            <div class="modal_content">
+                <header class="modal_container modal_header">
+                    <h2>Curriculum</h2>
+                    <span class="modal_button modal_close" onclick="close_modal()">
+                        &times;
+                    </span>
+                </header>
+
+                <div class="w3-bar w3-border-bottom">
+                    <button class="tab w3-bar-item modal_button" onclick="open_question(event, 'c1')">c1</button>
+                    <button class="tab w3-bar-item modal_button" onclick="open_question(event, 'c2')">c2</button>
+                    <button class="tab w3-bar-item modal_button" onclick="open_question(event, 'c3')">c3</button>
+                    <button class="tab w3-bar-item modal_button" onclick="open_question(event, 'c4')">c4</button>
+                    <button class="tab w3-bar-item modal_button" onclick="open_question(event, 'c5')">c5</button>
+                    <button class="tab w3-bar-item modal_button" onclick="open_question(event, 'c6')">c6</button>
+                    <button class="tab w3-bar-item modal_button" onclick="open_question(event, 'c7')">c7</button>
+                    <button class="tab w3-bar-item modal_button" onclick="open_question(event, 'c8')">c8</button>
+                    <button class="tab w3-bar-item modal_button" onclick="open_question(event, 'c9')">c9</button>
+                    <button class="tab w3-bar-item modal_button" onclick="open_question(event, 'c10')">c10</button>
+                </div>
+
+
+                <div id="c1" class="modal_container question">
+                    <h1>C1</h1>
+                    <p>London is the most populous city in the United Kingdom, with a metropolitan area of over 9 million inhabitants.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+
+                <div id="c2" class="modal_container question">
+                    <h1>C2</h1>
+                    <p>Paris is the capital of France.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+
+                <div id="c3" class="modal_container question">
+                    <h1>C3</h1>
+                    <p>Tokyo is the capital of Japan.</p><br>
+                </div>
+                <div id="c4" class="modal_container question">
+                    <h1>C4</h1>
+                    <p>Tokyo is the capital of Japan.</p><br>
+                </div>
+                <div id="c5" class="modal_container question">
+                    <h1>C5</h1>
+                    <p>Tokyo is the capital of Japan.</p><br>
+                </div>
+                <div id="c6" class="modal_container question">
+                    <h1>C6</h1>
+                    <p>Tokyo is the capital of Japan.</p><br>
+                </div>
+                <div id="c7" class="modal_container question">
+                    <h1>C7</h1>
+                    <p>Tokyo is the capital of Japan.</p><br>
+                </div>
+                <div id="c8" class="modal_container question">
+                    <h1>C8</h1>
+                    <p>Tokyo is the capital of Japan.</p><br>
+                </div>
+                <div id="c9" class="modal_container question">
+                    <h1>C9</h1>
+                    <p>Tokyo is the capital of Japan.</p><br>
+                </div>
+                <div id="c10" class="modal_container question">
+                    <h1>C10</h1>
+                    <p>Tokyo is the capital of Japan.</p><br>
+                </div>
+
+
+
+                <div class="modal_container">
+                    <p>
+                        some text
+                    </p>
+                    <p>
+                        some text
+                    </p>
+                </div>
+            </div>
         </div>
 
-        <h4> C2 </h4>
-        <p>
-            Question info
-        </p>
-        <input type="number" placeholder="answer">
-        <input type="button" value="More info">
-        <h4> C3 </h4>
-        <p>
-            Question info
-        </p>
-        <input type="number" placeholder="answer">
-        <input type="button" value="More info">
-        <h4> C4 </h4>
-        <p>
-            Question info
-        </p>
-        <input type="number" placeholder="answer">
-        <input type="button" value="More info">
-        <h3> Informal Curriculum </h3>
-        <h4> C5 </h4>
-        <p>
-            Question info
-        </p>
-        <input type="number" placeholder="answer">
-        <input type="button" value="More info">
-        <h4> C6 </h4>
-        <p>
-            Question info
-        </p>
-        <input type="number" placeholder="answer">
-        <input type="button" value="More info">
-        <h4> C7 </h4>
-        <p>
-            Question info
-        </p>
-        <input type="number" placeholder="answer">
-        <input type="button" value="More info">
-        <h4> C8 </h4>
-        <p>
-            Question info
-        </p>
-        <input type="number" placeholder="answer">
-        <input type="button" value="More info">
-        <h4> C9 </h4>
-        <p>
-            Question info
-        </p>
-        <input type="number" placeholder="answer">
-        <input type="button" value="More info">
-        <h4> C10 </h4>
-        <p>
-            Question info
-        </p>
-        <input type="number" placeholder="answer">
-        <input type="button" value="More info">
-    </form>
-    <div id="id01">
-        \
-    </div>
 
-
-</body>
+    </body>
 
 </html>
