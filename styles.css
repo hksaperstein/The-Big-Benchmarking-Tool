@@ -6,7 +6,12 @@ h1{
     padding: 5px;
     font-weight: bold;
 }
-input{
+h2{
+    text-align: Right;
+    font-size: 100%;
+    padding: 5px;
+}
+.start_buttons{
     background-color: lightblue;
     color: #02378c;
     width: 300px;
@@ -14,15 +19,22 @@ input{
     border-radius: 10px;
     text-align: center;
     font-size: 30px;
-
-
-}
-.start_buttons{
     margin: auto;
-    width: auto;
-
     padding: 10px;
+
 }
+a {
+    color: lightblue;
+}
+div.header {
+    margin-top: -15px;
+    margin-right: -10px;
+    margin-left: -10px;
+    position: sticky;
+    top: 0;
+    background-color: #02378c;
+}
+
 
  /* The side navigation menu */
  .sidenav {
