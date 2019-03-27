@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<script src="../javascript/Curriculum.js" ></script>
+<script src="../javascript/modals.js" ></script>
+
+<html lang="en">
+
+    <link rel="stylesheet" href="../styles.css">
+    <head>
+        <meta charset="UTF-8">
+        <title>Curriculum Tool</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </head>
+    <body>
+
+        <h1> Curriculum Tool </h1>
+        <h2> Insert curriculum module directory (.csv): </h2>
+        <input id="curriculum_file" type="file" name="myFile" accept=".csv">
+        <input id="curriculum_file_submit" type="submit" onclick="run_curriculum()">
+        <h3>Formal Curriculum</h3>
+        <form>
+            <h4> C1 </h4>
+            <div>
+                <p>
+                    Question info
+                </p>
+                <input type="number" placeholder="answer">
+                <input type="button" value="More info" onclick="open_modal(1, 'curriculum_modal')">
+            </div>
+
+            <h4> C2 </h4>
+            <p>
+                Question info
+            </p>
+            <input type="number" placeholder="answer">
+            <input type="button" value="More info" onclick="open_modal(2, 'curriculum_modal')">
+            <h4> C3 </h4>
+            <p>
+                Question info
+            </p>
+            <input type="number" placeholder="answer">
+            <input type="button" value="More info" onclick="open_modal(3, 'curriculum_modal')">
+            <h4> C4 </h4>
+            <p>
+                Question info
+            </p>
+            <input type="number" placeholder="answer">
+            <input type="button" value="More info" onclick="open_modal(4, 'curriculum_modal')">
+            <h3> Informal Curriculum </h3>
+            <h4> C5 </h4>
+            <p>
+                Question info
+            </p>
+            <input type="number" placeholder="answer">
+            <input type="button" value="More info" onclick="open_modal(5, 'curriculum_modal')">
+            <h4> C6 </h4>
+            <p>
+                Question info
+            </p>
+            <input type="number" placeholder="answer">
+            <input type="button" value="More info" onclick="open_modal(6, 'curriculum_modal')">
+            <h4> C7 </h4>
+            <p>
+                Question info
+            </p>
+            <input type="number" placeholder="answer">
+            <input type="button" value="More info" onclick="open_modal(7, 'curriculum_modal')">
+            <h4> C8 </h4>
+            <p>
+                Question info
+            </p>
+            <input type="number" placeholder="answer">
+            <input type="button" value="More info" onclick="open_modal(8, 'curriculum_modal')">
+            <h4> C9 </h4>
+            <p>
+                Question info
+            </p>
+            <input type="number" placeholder="answer">
+            <input type="button" value="More info" onclick="open_modal(9, 'curriculum_modal')">
+            <h4> C10 </h4>
+            <p>
+                Question info
+            </p>
+            <input type="number" placeholder="answer">
+            <input type="button" value="More info" onclick="open_modal(10, 'curriculum_modal')">
+        </form>
+
+
+        <!--MODAL-->
+        <div id="curriculum_modal" class="modal">
+            <div class="modal_content">
+                <header class="modal_container modal_header">
+                    <h2>Curriculum</h2>
+                    <span class="modal_button modal_close" onclick="close_modal('curriculum_modal')">
+                        &times;
+                    </span>
+                </header>
+
+                <div class="modal_tabs modal_bottom_border">
+                    <button class="tab modal_button" onclick="open_question(event, 'c1')">c1</button>
+                    <button class="tab modal_button" onclick="open_question(event, 'c2')">c2</button>
+                    <button class="tab modal_button" onclick="open_question(event, 'c3')">c3</button>
+                    <button class="tab modal_button" onclick="open_question(event, 'c4')">c4</button>
+                    <button class="tab modal_button" onclick="open_question(event, 'c5')">c5</button>
+                    <button class="tab modal_button" onclick="open_question(event, 'c6')">c6</button>
+                    <button class="tab modal_button" onclick="open_question(event, 'c7')">c7</button>
+                    <button class="tab modal_button" onclick="open_question(event, 'c8')">c8</button>
+                    <button class="tab modal_button" onclick="open_question(event, 'c9')">c9</button>
+                    <button class="tab modal_button" onclick="open_question(event, 'c10')">c10</button>
+                </div>
+
+
+                <div id="c1" class="modal_container question">
+                    <h1>C1</h1>
+                </div>
+                <div id="c2" class="modal_container question">
+                    <h1>C2</h1>
+                </div>
+                <div id="c3" class="modal_container question">
+                    <h1>C3</h1>
+                </div>
+                <div id="c4" class="modal_container question">
+                    <h1>C4</h1>
+                </div>
+                <div id="c5" class="modal_container question">
+                    <h1>C5</h1>
+                </div>
+                <div id="c6" class="modal_container question">
+                    <h1>C6</h1>
+                </div>
+                <div id="c7" class="modal_container question">
+                    <h1>C7</h1>
+                </div>
+                <div id="c8" class="modal_container question">
+                    <h1>C8</h1>
+                </div>
+                <div id="c9" class="modal_container question">
+                    <h1>C9</h1>
+                </div>
+                <div id="c10" class="modal_container question">
+                    <h1>C10</h1>
+                </div>
+
+            </div>
+        </div>
+
+
+    </body>
+
+</html>

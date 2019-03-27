@@ -31,45 +31,6 @@ p{
     padding: 10px;
 }
 
- /* The side navigation menu */
- .sidenav {
-     height: 100%; /* 100% Full-height */
-     width: 0; /* 0 width - change this with JavaScript */
-     position: fixed; /* Stay in place */
-     z-index: 1; /* Stay on top */
-     top: 0; /* Stay at the top */
-     right: 0;
-     background-color: lightblue; /* lightblue*/
-     overflow-x: hidden; /* Disable horizontal scroll */
-     padding-top: 60px; /* Place content 60px from the top */
-     transition: .5s; /* 0.5 second transition effect to slide in the sidenav */
- }
-
- /* The navigation menu links */
- .sidenav a {
-     padding: 8px 8px 8px 32px;
-     text-decoration: none;
-     font-size: 25px;
-     color: #818181;
-     display: block;
-     transition: 0.3s;
- }
-
- /* When you mouse over the navigation links, change their color */
- .sidenav a:hover {
-     color: #02378c;
-     font-weight: bold;
- }
-
- /* Position and style the close button (top right corner) */
- .sidenav .close {
-     position: absolute;
-     top: 0;
-     left: 0;
-     font-size: 30px;
-     margin-right: 25px;
- }
-
  /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
  #main_text {
      transition: margin-left .5s;
@@ -82,28 +43,6 @@ p{
      .sidenav a {font-size: 18px;}
  }
 
- .container {
-     position: absolute;
-     top: 0;
-     right: 0;
-     font-size: 36px;
-     margin-left: 50px;
-     padding: 15px;
-     display: inline-block;
-     cursor: pointer;
- }
- .container:hover{
-     : #02378c;
-     /*font-weight: bold;*/
- }
-
- .bar1, .bar2, .bar3 {
-     width: 35px;
-     height: 5px;
-     background-color: #02378c;
-     margin: 6px 0;
-     transition: 0.4s;
- }
 
 .tool {
     display: none; /* Hidden by default */
@@ -118,47 +57,6 @@ p{
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
-
-/* Modal Content */
-.tool_content {
-    background-color: #fefefe;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-}
-
-/* The Close Button */
-.close {
-    color: #aaaaaa;
-    margin: 0;
-    font-size: 28px;
-    font-weight: bold;
-}
-.left {
-    color: #aaaaaa;
-    float: left;
-    font-size: 40px;
-    font-weight: bold;
-}
-.right {
-    color: #aaaaaa;
-    float: right;
-    font-size: 40px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus,
-.left:hover,
-.left:focus,
-.right:hover,
-.right:focus{
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-}
-
 
 /*Modals CSS*/
 .modal {
@@ -181,11 +79,23 @@ p{
     position:relative;
     padding:0;
     outline:0;
-    width:600px;
+    width:80%;
 }
 
 .modal_header{
     text-align: center;
+    margin: 0;
+}
+.modal_tabs{
+    /*align-content: stretch;*/
+
+    overflow:hidden;
+    display:inline-block;
+    width:auto;
+    margin: 0;
+}
+.modal_bottom_border{
+    border-bottom:1px solid #ccc!important
 }
 
 .modal_container{
@@ -196,22 +106,34 @@ p{
     position:absolute;
     right:0;
     top:0;
+    font-size: 40px;
 }
 
 .modal_button{
     border:none;
-    display:inline-block;
+    display: block;
+    float: left;
     padding:8px 16px;
     vertical-align:middle;
+    horiz-align: center;
     overflow:hidden;
     text-decoration:none;
     color:inherit;
     background-color:inherit;
     text-align:center;
     cursor:pointer;
-    white-space:nowrap;
+    width: 10%;
+
 }
 
 .modal_button:hover{
     background-color: lightgray;
+}
+.modal_tabs{
+    width: 100%;
+}
+
+.tab{
+    color:#000!important;
+    background-color:#f1f1f1!important;
 }
