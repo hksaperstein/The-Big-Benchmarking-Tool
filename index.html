@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<script src="javascript/curriculum_functions.js" type="text/javascript"></script>
+<script src="javascript/Curriculum.js" type="text/javascript"></script>
 <script src="javascript/research_functions.js" type="text/javascript"></script>
-<script src="javascript/output_functions.js" type="text/javascript"></script>
+<script src="javascript/index.js" type="text/javascript"></script>
 
 <html lang="eng">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <head>
         <title>
             Benchmarking
@@ -26,7 +27,7 @@
         <a href="index.html">Home</a>
         <a href="about.html">About the Tool </a>
         <a href="disclaimer.html">Disclaimer</a>
-        <a href="#">Curriculum Tool</a>
+        <a href="curriculum.html">Curriculum Tool</a>
         <a href="#">Research Tool</a>
         <a href="#">SDGs</a>
     </div>
@@ -36,7 +37,8 @@
         <div class="bar3"></div>
     </div>
     <div class="start_buttons">
-        <input class="start_buttons" type="button" id="curriculum_start" value="Curriculum Tool">
+        <input class="start_buttons" type="button" id="curriculum_start" onclick="location.href='./curriculum.html';" value="Curriculum Tool" />
+
         <input class="start_buttons" type="button" id="research_start" value="Research Tool">
     </div>
 
