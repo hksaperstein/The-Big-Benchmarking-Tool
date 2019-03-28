@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<script src="../javascript/research_functions.js" ></script>
+<script src="../javascript/modals.js" ></script>
+
+<html lang="en">
+
+    <link rel="stylesheet" href="../styles.css">
+    <head>
+        <meta charset="UTF-8">
+        <title>Research Tool</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <div id="main_header" class="header_bar">
+            <h2 class="header_tabs">
+                <button class="header_button" id="index_button" onclick="location.href='./index.html'">Home</button>
+                <button class="header_button" id="about_button" onclick="location.href='./about.html'">About</button>
+                <button class="header_button" id="curriculum_button" onclick="location.href='./curriculum.html'">Curriculum Tool</button>
+                <button class="header_button" id="research_button" onclick="location.href='./research.html'">Research Tool</button>
+                <button class="header_button" id="disclaimer_button" onclick="location.href='./disclaimer.html'">Disclaimer</button>
+                <button class="header_button" id="SDGs_button" onclick="location.href='https://www.un.org/sustainabledevelopment/sustainable-development-goals'">SDGs</button>
+            </h2>
+        </div>
+
+    <h1> Research Tool </h1>
+    <h2> Insert Research database (.json): </h2>
+    <input id="research_file" type="file" name="myFile" accept=".json">
+    <input id="research_file_submit" type="submit" onclick="run_curriculum()">
+    <h3>Formal Curriculum</h3>
+    <form>
+        <h4> R1 </h4>
+        <div>
+            <p>
+                Question info
+            </p>
+            <input type="number" placeholder="answer">
+            <input type="button" value="More info" onclick="open_modal(1, 'research_modal')">
+        </div>
+
+        <h4> R2 </h4>
+        <p>
+            Question info
+        </p>
+        <input type="number" placeholder="answer">
+        <input type="button" value="More info" onclick="open_modal(2, 'research_modal')">
+        <h4> R3 </h4>
+        <p>
+            Question info
+        </p>
+        <input type="number" placeholder="answer">
+        <input type="button" value="More info" onclick="open_modal(3, 'research_modal')">
+        <h4> R4 </h4>
+        <p>
+            Question info
+        </p>
+        <input type="number" placeholder="answer">
+        <input type="button" value="More info" onclick="open_modal(4, 'research_modal')">
+        <h3> Informal Curriculum </h3>
+        <h4> R5 </h4>
+        <p>
+            Question info
+        </p>
+        <input type="number" placeholder="answer">
+        <input type="button" value="More info" onclick="open_modal(5, 'research_modal')">
+        <h4> R6 </h4>
+        <p>
+            Question info
+        </p>
+        <input type="number" placeholder="answer">
+        <input type="button" value="More info" onclick="open_modal(6, 'research_modal')">
+        <h4> R7 </h4>
+        <p>
+            Question info
+        </p>
+        <input type="number" placeholder="answer">
+        <input type="button" value="More info" onclick="open_modal(7, 'research_modal')">
+        <h4> R8 </h4>
+        <p>
+            Question info
+        </p>
+        <input type="number" placeholder="answer">
+        <input type="button" value="More info" onclick="open_modal(8, 'research_modal')">
+        <h4> R9 </h4>
+        <p>
+            Question info
+        </p>
+        <input type="number" placeholder="answer">
+        <input type="button" value="More info" onclick="open_modal(9, 'research_modal')">
+        <h4> R10 </h4>
+        <p>
+            Question info
+        </p>
+        <input type="number" placeholder="answer">
+        <input type="button" value="More info" onclick="open_modal(10, 'research_modal')">
+    </form>
+
+
+    <!--MODAL-->
+    <div id="research_modal" class="modal">
+        <div class="modal_content">
+            <header class="modal_container modal_header">
+                <h2>Research</h2>
+                <span class="modal_button modal_close" onclick="close_modal('research_modal')">
+                    &times;
+                </span>
+            </header>
+
+            <div class="modal_tabs modal_bottom_border">
+                <button class="tab modal_button" onclick="open_question(event, 'r1')">R1</button>
+                <button class="tab modal_button" onclick="open_question(event, 'r2')">R2</button>
+                <button class="tab modal_button" onclick="open_question(event, 'r3')">R3</button>
+                <button class="tab modal_button" onclick="open_question(event, 'r4')">R4</button>
+                <button class="tab modal_button" onclick="open_question(event, 'r5')">R5</button>
+                <button class="tab modal_button" onclick="open_question(event, 'r6')">R6</button>
+                <button class="tab modal_button" onclick="open_question(event, 'r7')">R7</button>
+                <button class="tab modal_button" onclick="open_question(event, 'r8')">R8</button>
+                <button class="tab modal_button" onclick="open_question(event, 'r9')">R9</button>
+                <button class="tab modal_button" onclick="open_question(event, 'r10')">R10</button>
+            </div>
+
+
+            <div id="r1" class="modal_container question">
+                <h1>C1</h1>
+            </div>
+            <div id="r2" class="modal_container question">
+                <h1>C2</h1>
+            </div>
+            <div id="r3" class="modal_container question">
+                <h1>C3</h1>
+            </div>
+            <div id="r4" class="modal_container question">
+                <h1>C4</h1>
+            </div>
+            <div id="r5" class="modal_container question">
+                <h1>C5</h1>
+            </div>
+            <div id="r6" class="modal_container question">
+                <h1>C6</h1>
+            </div>
+            <div id="r7" class="modal_container question">
+                <h1>C7</h1>
+            </div>
+            <div id="r8" class="modal_container question">
+                <h1>C8</h1>
+            </div>
+            <div id="r9" class="modal_container question">
+                <h1>C9</h1>
+            </div>
+            <div id="r10" class="modal_container question">
+                <h1>C10</h1>
+            </div>
+
+        </div>
+    </div>
+
+
+    </body>
+
+</html>
