@@ -1,4 +1,8 @@
 
+html{
+    background: #F0E8E8;
+}
+
 h1{
      text-align: Center;
      margin-bottom: 5px;
@@ -13,113 +17,133 @@ h2{
     padding: 5px;
     font-weight: bold;
 }
-input{
-    background-color: lightblue;
+
+p{
+    text-align: Left;
+    margin-bottom: 5px;
+    padding: 5px;
+}
+
+form{
+    padding-left: 10%;
+}
+
+.header_bar {
+    margin-top: -15px;
+    margin-right: -10px;
+    margin-left: -10px;
+    position: sticky;
+    top: 0;
+    background-color: #02378c;
+}
+
+.header_tabs{
+    text-align: Right;
+    font-size: 100%;
+    padding: 5px;
+}
+
+.start_buttons {
     color: #02378c;
-    width: 300px;
-    /*height: 50px;*/
     border-radius: 10px;
     text-align: center;
     font-size: 30px;
 }
+
 .sdg_keywords {
     display: inline-block;
     vertical-align: top;
 }
 
 .start_buttons{
-    margin: auto;
-    width: auto;
 
-    padding: 10px;
+#curriculum_start, #research_start{
+    background-color: lightblue;
+    margin: auto;
+
+}
+    
+
+
+/*Modals CSS*/
+.modal {
+    z-index:3;
+    display:none;
+    padding-top:100px;
+    position:fixed;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    overflow:auto;
+    background-color:rgb(0,0,0);
+    background-color:rgba(0,0,0,0.4);
 }
 
- /* The side navigation menu */
- .sidenav {
-     height: 100%; /* 100% Full-height */
-     width: 0; /* 0 width - change this with JavaScript */
-     position: fixed; /* Stay in place */
-     z-index: 1; /* Stay on top */
-     top: 0; /* Stay at the top */
-     right: 0;
-     background-color: lightblue; /* Black*/
-     overflow-x: hidden; /* Disable horizontal scroll */
-     padding-top: 60px; /* Place content 60px from the top */
-     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
- }
+.modal_content{
+    margin:auto;
+    background-color:#fff;
+    position:relative;
+    padding:0;
+    outline:0;
+    width:80%;
+}
 
- /* The navigation menu links */
- .sidenav a {
-     padding: 8px 8px 8px 32px;
-     text-decoration: none;
-     font-size: 25px;
-     color: #818181;
-     display: block;
-     transition: 0.3s;
- }
+.modal_header{
+    text-align: center;
+    margin: 0;
+}
+.modal_tabs{
+    /*align-content: stretch;*/
 
- /* When you mouse over the navigation links, change their color */
- .sidenav a:hover {
-     color: #02378c;
-     font-weight: bold;
- }
+    overflow:hidden;
+    display:inline-block;
+    width:auto;
+    margin: 0;
+}
+.modal_bottom_border{
+    border-bottom:1px solid #ccc!important
+}
 
- /* Position and style the close button (top right corner) */
- .sidenav .close {
-     position: absolute;
-     top: 0;
-     left: 0;
-     font-size: 36px;
-     margin-right: 50px;
- }
+.modal_container{
+    padding:0.01em 16px
+}
 
- /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
- #main_text {
-     transition: margin-left .5s;
-     padding: -20px;
- }
+.modal_close{
+    position:absolute;
+    right:0;
+    top:0;
+    font-size: 40px;
+}
 
- /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
- @media screen and (max-height: 450px) {
-     .sidenav {padding-top: 15px;}
-     .sidenav a {font-size: 18px;}
- }
+.modal_button{
+    border:none;
+    display: block;
+    float: left;
+    padding:8px 16px;
+    vertical-align:middle;
+    horiz-align: center;
+    overflow:hidden;
+    text-decoration:none;
+    color:inherit;
+    background-color:inherit;
+    text-align:center;
+    cursor:pointer;
+    width: 10%;
 
- .container {
-     position: absolute;
-     top: 0;
-     right: 0;
-     font-size: 36px;
-     margin-left: 50px;
-     padding: 15px;
-     display: inline-block;
-     cursor: pointer;
- }
- .container:hover{
-     : #02378c;
-     /*font-weight: bold;*/
- }
+}
 
- .bar1, .bar2, .bar3 {
-     width: 35px;
-     height: 5px;
-     background-color: #02378c;
-     margin: 6px 0;
-     transition: 0.4s;
- }
+.modal_button:hover{
+    background-color: lightgray;
+}
+.modal_tabs{
+    width: 100%;
+}
 
- /* Rotate first bar */
- .change .bar1 {
-     -webkit-transform: rotate(45deg) translateZ(0);
-     transform: rotate(45deg) translateZ(0);
- }
-
- .change .bar2 {opacity: 0;}
-
- .change .bar3 {
-     -webkit-transform: rotate(-45deg) translateZ(0);
-     transform: rotate(-45deg) translateY(5px);
- }
+.tab{
+    color:#000!important;
+    background-color:#f1f1f1!important;
+}
 
  /*input[type=text]{*/
     /*width: 100%;*/
