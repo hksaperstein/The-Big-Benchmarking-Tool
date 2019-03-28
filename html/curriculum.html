@@ -11,17 +11,37 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     </head>
     <body>
+        <div id="main_header" class="header_bar">
+            <h2 class="header_tabs">
+                <button class="header_button" id="index_button" onclick="location.href='./index.html'">Home</button>
+                <button class="header_button" id="about_button" onclick="location.href='./about.html'">About</button>
+                <button class="header_button" id="curriculum_button" onclick="location.href='./curriculum.html'">Curriculum Tool</button>
+                <button class="header_button" id="research_button" onclick="location.href='./research.html'">Research Tool</button>
+                <button class="header_button" id="disclaimer_button" onclick="location.href='./disclaimer.html'">Disclaimer</button>
+                <button class="header_button" id="SDGs_button" onclick="location.href='https://www.un.org/sustainabledevelopment/sustainable-development-goals'">SDGs</button>
+            </h2>
+        </div>
 
         <h1> Curriculum Tool </h1>
         <h2> Insert curriculum module directory (.csv): </h2>
         <input id="curriculum_file" type="file" name="myFile" accept=".csv">
         <input id="curriculum_file_submit" type="submit" onclick="run_curriculum()">
-        <h3>Formal Curriculum</h3>
+
         <form>
+            <h3>Formal Curriculum</h3>
+            <p id="formal_curriculum">
+                In order to perform the formal section of the tool, you need to gain access to the module directory for your university.
+                Currently, this is tool can run on a web extension of the module directory.
+                This can either be gathered yourself or by contacting your university’s registrar or data management unit.<br><br>
+
+                The tool is run on a csv file of consisting of the module codes, module titles, and module descriptions for all undergraduate modules.
+                This can either be gathered yourself or by contacting your university’s registrar or data management unit.
+
+            </p>
             <h4> C1 </h4>
             <div>
                 <p>
-                    Question info
+                    How many modules include sustainability-related topics or themes, relative to the total number of modules offered at the institution, as a percentage?
                 </p>
                 <input type="number" placeholder="answer">
                 <input type="button" value="More info" onclick="open_modal(1, 'curriculum_modal')">
@@ -29,56 +49,57 @@
 
             <h4> C2 </h4>
             <p>
-                Question info
+                How many courses include sustainability related topics, themes, or modules, relative to the total number of undergraduate courses offered at the institution, as a percentage?
             </p>
             <input type="number" placeholder="answer">
             <input type="button" value="More info" onclick="open_modal(2, 'curriculum_modal')">
             <h4> C3 </h4>
             <p>
-                Question info
+                How many undergraduate students have taken a sustainability-related module in the current year in relation to total number of students enrolled at the institution, as a percentage.
             </p>
             <input type="number" placeholder="answer">
             <input type="button" value="More info" onclick="open_modal(3, 'curriculum_modal')">
             <h4> C4 </h4>
             <p>
-                Question info
+                How many sustainability module instances are taken in proportion to the whole undergraduate module instances?
             </p>
             <input type="number" placeholder="answer">
             <input type="button" value="More info" onclick="open_modal(4, 'curriculum_modal')">
             <h3> Informal Curriculum </h3>
             <h4> C5 </h4>
             <p>
-                Question info
+                How many student organizations have a purpose directly related to sustainability?
+
             </p>
             <input type="number" placeholder="answer">
             <input type="button" value="More info" onclick="open_modal(5, 'curriculum_modal')">
             <h4> C6 </h4>
             <p>
-                Question info
+                Does the institution maintain a sustainability website updated at least every 6 months?
             </p>
             <input type="number" placeholder="answer">
             <input type="button" value="More info" onclick="open_modal(6, 'curriculum_modal')">
             <h4> C7 </h4>
             <p>
-                Question info
+                Number of university wide sustainability-focused educational programs or events offered by the student union in the last year.
             </p>
             <input type="number" placeholder="answer">
             <input type="button" value="More info" onclick="open_modal(7, 'curriculum_modal')">
             <h4> C8 </h4>
             <p>
-                Question info
+                Does the institution conduct an assessment of the sustainability literacy and knowledge of its students?
             </p>
             <input type="number" placeholder="answer">
             <input type="button" value="More info" onclick="open_modal(8, 'curriculum_modal')">
             <h4> C9 </h4>
             <p>
-                Question info
+                Does the institution have an ongoing program that offers incentives for academic staff in multiple disciplines or departments to develop new sustainability modules and/or incorporate sustainability into existing modules?
             </p>
             <input type="number" placeholder="answer">
             <input type="button" value="More info" onclick="open_modal(9, 'curriculum_modal')">
             <h4> C10 </h4>
             <p>
-                Question info
+                How many of these sustainability areas are exposed to students through buildings, events, or programs? : ● Air & Climate ● Buildings ● Energy ● Food & Dining ● Grounds ● Purchasing ● Transportation ● Waste ● Water ● Coordination & Planning ● Diversity & Affordability ● Investment & Finance ● Public Engagement ● Wellbeing & Work
             </p>
             <input type="number" placeholder="answer">
             <input type="button" value="More info" onclick="open_modal(10, 'curriculum_modal')">
@@ -96,16 +117,16 @@
                 </header>
 
                 <div class="modal_tabs modal_bottom_border">
-                    <button class="tab modal_button" onclick="open_question(event, 'c1')">c1</button>
-                    <button class="tab modal_button" onclick="open_question(event, 'c2')">c2</button>
-                    <button class="tab modal_button" onclick="open_question(event, 'c3')">c3</button>
-                    <button class="tab modal_button" onclick="open_question(event, 'c4')">c4</button>
-                    <button class="tab modal_button" onclick="open_question(event, 'c5')">c5</button>
-                    <button class="tab modal_button" onclick="open_question(event, 'c6')">c6</button>
-                    <button class="tab modal_button" onclick="open_question(event, 'c7')">c7</button>
-                    <button class="tab modal_button" onclick="open_question(event, 'c8')">c8</button>
-                    <button class="tab modal_button" onclick="open_question(event, 'c9')">c9</button>
-                    <button class="tab modal_button" onclick="open_question(event, 'c10')">c10</button>
+                    <button class="tab modal_button" onclick="open_question(event, 'c1')">C1</button>
+                    <button class="tab modal_button" onclick="open_question(event, 'c2')">C2</button>
+                    <button class="tab modal_button" onclick="open_question(event, 'c3')">C3</button>
+                    <button class="tab modal_button" onclick="open_question(event, 'c4')">C4</button>
+                    <button class="tab modal_button" onclick="open_question(event, 'c5')">C5</button>
+                    <button class="tab modal_button" onclick="open_question(event, 'c6')">C6</button>
+                    <button class="tab modal_button" onclick="open_question(event, 'c7')">C7</button>
+                    <button class="tab modal_button" onclick="open_question(event, 'c8')">C8</button>
+                    <button class="tab modal_button" onclick="open_question(event, 'c9')">C9</button>
+                    <button class="tab modal_button" onclick="open_question(event, 'c10')">C10</button>
                 </div>
 
 

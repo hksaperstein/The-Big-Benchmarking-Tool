@@ -14,14 +14,14 @@
 
 
     <body>
-        <div id="main_header" class="header">
-            <h2>
-                <input class="header_button" type="button" id="index_button" value="Home" onclick="location.href='./index.html'">
-                <input class="header_button" type="button" id="about_button" value="About" onclick="location.href='./about.html'">
-                <input class="header_button" type="button" id="disclaimer_button" value="Disclaimer" onclick="location.href='./disclaimer.html'">
-                <input class="header_button" type="button" id="curriculum_button" value="Curriculum Tool" onclick="location.href='./curriculum.html'">
-                <input class="header_button" type="button" id="research_button" value="Research" onclick="location.href='./research.html'">
-                <input class="header_button" type="button" id="SDGs_button" value="SDGs" onclick="location.href='https://www.un.org/sustainabledevelopment/sustainable-development-goals'">
+        <div id="main_header" class="header_bar">
+            <h2 class="header_tabs">
+                <button class="header_button" id="index_button" onclick="location.href='./index.html'">Home</button>
+                <button class="header_button" id="about_button" onclick="location.href='./about.html'">About</button>
+                <button class="header_button" id="curriculum_button" onclick="location.href='./curriculum.html'">Curriculum Tool</button>
+                <button class="header_button" id="research_button" onclick="location.href='./research.html'">Research Tool</button>
+                <button class="header_button" id="disclaimer_button" onclick="location.href='./disclaimer.html'">Disclaimer</button>
+                <button class="header_button" id="SDGs_button" onclick="location.href='https://www.un.org/sustainabledevelopment/sustainable-development-goals'" >SDGs</button>
             </h2>
         </div>
         <!--<img src="./tenor.gif"/>-->
@@ -37,9 +37,8 @@
     </body>
 
     <div class="start_buttons">
-        <input class="start_buttons" type="button" id="curriculum_start" onclick="location.href='./curriculum.html'" value="Curriculum Tool" />
-
-        <input class="start_buttons" type="button" id="research_start" onclick="location.href='./research.html'" value="Research Tool"/>
+        <button class="start_buttons" id="curriculum_start" onclick="location.href='./curriculum.html'">Curriculum Tool</button>
+        <button class="start_buttons" id="research_start" onclick="location.href='./research.html'">Research Tool</button>
     </div>
 
 
