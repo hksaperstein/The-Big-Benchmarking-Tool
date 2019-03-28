@@ -4,9 +4,16 @@ html{
 }
 
 h1{
+     text-align: Center;
+     margin-bottom: 5px;
+     font-size: 300%;
+     padding: 5px;
+     font-weight: bold;
+ }
+h2{
     text-align: Center;
     margin-bottom: 5px;
-    font-size: 300%;
+    font-size: 100%;
     padding: 5px;
     font-weight: bold;
 }
@@ -41,14 +48,21 @@ form{
     border-radius: 10px;
     text-align: center;
     font-size: 30px;
-
-
 }
+
+.sdg_keywords {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.start_buttons{
+
 #curriculum_start, #research_start{
     background-color: lightblue;
     margin: auto;
 
 }
+    
 
 
 /*Modals CSS*/
