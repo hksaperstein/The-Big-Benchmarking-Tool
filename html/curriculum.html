@@ -5,6 +5,8 @@
 <html lang="en">
 
     <link rel="stylesheet" href="../styles.css">
+    <!--<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">-->
+
     <head>
         <meta charset="UTF-8">
         <title>Curriculum Tool</title>
@@ -19,11 +21,14 @@
                 <button class="header_button" id="research_button" onclick="location.href='./research.html'">Research Tool</button>
                 <button class="header_button" id="disclaimer_button" onclick="location.href='./disclaimer.html'">Disclaimer</button>
                 <button class="header_button" id="keywords" onclick="location.href='./keywords.html'">Keywords</button>
-                <button class="header_button" id="SDGs_button" onclick="location.href='https://www.un.org/sustainabledevelopment/sustainable-development-goals'">SDGs</button>
+                <button class="header_button" id="SDGs_button" onclick="window.open('https://www.un.org/sustainabledevelopment/sustainable-development-goals', '_blank')">SDGs</button>
             </h2>
         </div>
 
         <h1> Curriculum Tool </h1>
+        <p>Welcome to the curriculum benchmarking tool. This tool will benchmark sustainability in the curriculum of a higher education institution in an attempt to grade how well sustainability is being taught to its students. </p>
+        <p>We realize the importance of including sustainability education both in and outside of the classroom. For this reason we benchmark things like, the percentage of modules related to sustainability out of the total modules offered by a university as well as things like, the amount of sustainability related student organizations on campus. While researching sustainability in higher educations we realized that a majority of the focus on bringing sustainability in universities has been on the estates of the universities and teaching sustainability through extracurricular activities. Our benchmarking tool puts more focus on the in class education of sustainability, which we call the formal curriculum. However, trying to compare and score the sustainability in the formal and informal curriculum is like comparing apples to oranges. They are both important to a student learning about sustainability. Therefore we split both the curriculum and research benchmarking tools into two parts, the formal and informal, to be compared and scored separately
+        </p>
         <h2> Insert curriculum module directory (.csv): </h2>
         <input id="curriculum_file" type="file" name="myFile" accept=".csv">
         <input id="curriculum_file_submit" type="submit" onclick="run_curriculum()">
@@ -117,17 +122,17 @@
                     </span>
                 </header>
 
-                <div class="modal_tabs modal_bottom_border">
-                    <button class="tab modal_button" onclick="open_question(event, 'c1')">C1</button>
-                    <button class="tab modal_button" onclick="open_question(event, 'c2')">C2</button>
-                    <button class="tab modal_button" onclick="open_question(event, 'c3')">C3</button>
-                    <button class="tab modal_button" onclick="open_question(event, 'c4')">C4</button>
-                    <button class="tab modal_button" onclick="open_question(event, 'c5')">C5</button>
-                    <button class="tab modal_button" onclick="open_question(event, 'c6')">C6</button>
-                    <button class="tab modal_button" onclick="open_question(event, 'c7')">C7</button>
-                    <button class="tab modal_button" onclick="open_question(event, 'c8')">C8</button>
-                    <button class="tab modal_button" onclick="open_question(event, 'c9')">C9</button>
-                    <button class="tab modal_button" onclick="open_question(event, 'c10')">C10</button>
+                <div class="modal_bar modal_bottom_border">
+                    <button class="modal_tablink modal_bar_item modal_button" onclick="open_question(event, 'c1')">C1</button>
+                    <button class="modal_tablink modal_bar_item modal_button" onclick="open_question(event, 'c2')">C2</button>
+                    <button class="modal_tablink modal_bar_item modal_button" onclick="open_question(event, 'c3')">C3</button>
+                    <button class="modal_tablink modal_bar_item modal_button" onclick="open_question(event, 'c4')">C4</button>
+                    <button class="modal_tablink modal_bar_item modal_button" onclick="open_question(event, 'c5')">C5</button>
+                    <button class="modal_tablink modal_bar_item modal_button" onclick="open_question(event, 'c6')">C6</button>
+                    <button class="modal_tablink modal_bar_item modal_button" onclick="open_question(event, 'c7')">C7</button>
+                    <button class="modal_tablink modal_bar_item modal_button" onclick="open_question(event, 'c8')">C8</button>
+                    <button class="modal_tablink modal_bar_item modal_button" onclick="open_question(event, 'c9')">C9</button>
+                    <button class="modal_tablink modal_bar_item modal_button" onclick="open_question(event, 'c10')">C10</button>
                 </div>
 
 

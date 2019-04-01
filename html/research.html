@@ -19,11 +19,17 @@
                 <button class="header_button" id="research_button" onclick="location.href='./research.html'">Research Tool</button>
                 <button class="header_button" id="disclaimer_button" onclick="location.href='./disclaimer.html'">Disclaimer</button>
                 <button class="header_button" id="keywords" onclick="location.href='./keywords.html'">Keywords</button>
-                <button class="header_button" id="SDGs_button" onclick="location.href='https://www.un.org/sustainabledevelopment/sustainable-development-goals'">SDGs</button>
+                <button class="header_button" id="SDGs_button" onclick="window.open('https://www.un.org/sustainabledevelopment/sustainable-development-goals', '_blank')">SDGs</button>
             </h2>
         </div>
 
     <h1> Research Tool </h1>
+        <p>
+            The research tool examines the amount of sustainability related topics or themes that are present in research efforts at a university. This consists of published articles and authors, as well as what efforts are made to increase sustainability knowledge.
+        </p>
+        <p>
+            The tool is split into two sections, formal and informal. Formal consists of the research that is being performed. These questions are answered with percentages. Informal consists of questions that are important to increase the amount of sustainability related research being done. They are mainly answered with yes or no responses.
+        </p>
     <h2> Insert Research database (.json): </h2>
     <input id="research_file" type="file" name="myFile" accept=".json">
     <input id="research_file_submit" type="submit" onclick="run_curriculum()">
@@ -32,7 +38,7 @@
         <h4> R1 </h4>
         <div>
             <p>
-                Question info
+                Percentage of funding from grants and contracts specifying sustainability-related research, relative to the total funding from grants and contracts at the institution, as a percentage.
             </p>
             <input type="number" placeholder="answer">
             <input type="button" value="More info" onclick="open_modal(1, 'research_modal')">
@@ -40,20 +46,18 @@
 
         <h4> R2 </h4>
         <p>
-            Question info
-        </p>
+            Percentage of published research articles with a focus on sustainability-related issues, relative to the total number of research publications in all areas, as a percentage.        </p>
         <input type="number" placeholder="answer">
         <input type="button" value="More info" onclick="open_modal(2, 'research_modal')">
         <h4> R3 </h4>
         <p>
-            Question info
+            Percentage of the institution’s academic staff that are currently engaged in sustainability research, relative to the total amount of academic staff who conduct research, as a percentage.
         </p>
         <input type="number" placeholder="answer">
         <input type="button" value="More info" onclick="open_modal(3, 'research_modal')">
         <h4> R4 </h4>
         <p>
-            Question info
-        </p>
+            Percentage of academic departments that include at least one academic staff member that conducts sustainability research compared to other areas of research, relative to the total number of academic departments, as a percentage.        </p>
         <input type="number" placeholder="answer">
         <input type="button" value="More info" onclick="open_modal(4, 'research_modal')">
         <h3> Informal Curriculum </h3>
@@ -65,31 +69,31 @@
         <input type="button" value="More info" onclick="open_modal(5, 'research_modal')">
         <h4> R6 </h4>
         <p>
-            Question info
+            Does the institution have an ongoing program to encourage students in multiple disciplines or academic programs to conduct research in sustainability?
         </p>
         <input type="number" placeholder="answer">
         <input type="button" value="More info" onclick="open_modal(6, 'research_modal')">
         <h4> R7 </h4>
         <p>
-            Question info
+            Does the institution have a program to encourage academic staff from multiple disciplines or academic programs to conduct research in sustainability topics? (To count, the program must provide faculty with incentives to research sustainability and specifically aim to increase faculty sustainability research)
         </p>
         <input type="number" placeholder="answer">
         <input type="button" value="More info" onclick="open_modal(7, 'research_modal')">
         <h4> R8 </h4>
         <p>
-            Question info
+            Has the institution published written policies and procedures that give positive recognition to interdisciplinary, transdisciplinary, and multidisciplinary research during faculty promotion and/or tenure decisions?
         </p>
         <input type="number" placeholder="answer">
         <input type="button" value="More info" onclick="open_modal(8, 'research_modal')">
         <h4> R9 </h4>
         <p>
-            Question info
+            Does the institution have ongoing library support for sustainability research and learning in the form of research guides, materials selection policies and practices, curriculum development efforts, sustainability literacy promotion, and/or e-learning objects focused on sustainability?
         </p>
         <input type="number" placeholder="answer">
         <input type="button" value="More info" onclick="open_modal(9, 'research_modal')">
         <h4> R10 </h4>
         <p>
-            Question info
+            Does the institution provide financial incentives to support open access publishing, e.g., a publishing fund to support faculty members with article processing and other open access publication charges?
         </p>
         <input type="number" placeholder="answer">
         <input type="button" value="More info" onclick="open_modal(10, 'research_modal')">

@@ -91,17 +91,26 @@ form{
     text-align: center;
     margin: 0;
 }
-.modal_tabs{
-    /*align-content: stretch;*/
-
+.modal_bar{
     overflow:hidden;
     display:inline-block;
-    width:auto;
-    margin: 0;
+    width:100%;
 }
+
 .modal_bottom_border{
     border-bottom:1px solid #ccc!important
 }
+
+.modal_bar_item{
+    padding:8px 16px;
+    float:left;
+    width:auto;
+    border:none;
+    display:block;
+    outline:0
+}
+
+
 
 .modal_container{
     padding:0.01em 16px
@@ -134,11 +143,9 @@ form{
 .modal_button:hover{
     background-color: lightgray;
 }
-.modal_tabs{
-    width: 100%;
-}
 
-.tab{
+
+.modal_tablink{
     color:#000!important;
     background-color:#f1f1f1!important;
 }
