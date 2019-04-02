@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <script src="../javascript/Curriculum.js" ></script>
 <script src="../javascript/modals.js" ></script>
-
+<script src="../javascript/Module.js"></script>
 <html lang="en">
 
     <link rel="stylesheet" href="../styles.css">
@@ -30,8 +30,8 @@
         <p>We realize the importance of including sustainability education both in and outside of the classroom. For this reason we benchmark things like, the percentage of modules related to sustainability out of the total modules offered by a university as well as things like, the amount of sustainability related student organizations on campus. While researching sustainability in higher educations we realized that a majority of the focus on bringing sustainability in universities has been on the estates of the universities and teaching sustainability through extracurricular activities. Our benchmarking tool puts more focus on the in class education of sustainability, which we call the formal curriculum. However, trying to compare and score the sustainability in the formal and informal curriculum is like comparing apples to oranges. They are both important to a student learning about sustainability. Therefore we split both the curriculum and research benchmarking tools into two parts, the formal and informal, to be compared and scored separately
         </p>
         <h2> Insert curriculum module directory (.csv): </h2>
-        <input id="curriculum_file" type="file" name="myFile" accept=".csv">
-        <input id="curriculum_file_submit" type="submit" onclick="run_curriculum()">
+        <input id="curriculum_file" type="file" name="curriculum_file" accept=".csv">
+        <input id="curriculum_file_submit" type="submit" onclick="createModule()">
 
         <form>
             <h3>Formal Curriculum</h3>
