@@ -1,5 +1,5 @@
 class Module{
-    constructor(code,title, description) {
+    constructor(code=null,title=null, description=null) {
         this.code = code;
         this.title = title;
         this.description = description;
@@ -28,30 +28,33 @@ class Module{
     }
 }
 
-function createModule() {
+function parse_csv() {
 
-    let file = document.getElementById("curriculum_file").value;
-    alert(file);
-    let file_desriptor = "file:///" + file
-    alert(file_desriptor)
+    let fileUpload = document.getElementById("curriculum_file");
 
-    // let module = new Module(
-    //     "this",
-    //     " is ",
-    //     "a test"
-    // );
-    //
-    // alert(module.getCode() +
-    //     module.getTitle() +
-    //     module.getDescription());
-    //
-    // module.setCode("it ");
-    // module.setTitle("clearly ");
-    // module.setDescription("works");
-    //
-    // alert(module.getCode() +
-    //     module.getTitle() +
-    //     module.getDescription());
+    let regex = /^([a-zA-Z0-9\s_\\.\-:])+(.csv)$/;
+    let modules = [];
 
+    if (regex.test(fileUpload.value.toLowerCase())) {
+        if (typeof (FileReader) != "undefined") {
+            let reader = new FileReader();
+            reader.onload = function (e) {
+                let rows = e.target.result.split("\n");
+                for(let i = 1; i < rows.length; i++){
+                    let cols = rows[i].split(",");
+                    let module = new Module();
+                    module.setCode(cols[0]);
+                    module.setTitle(cols[1]);
+                    module.setDescription(cols[2]);
+                    modules.push(module)
+                }
+            };
+            reader.readAsText(fileUpload.files.item(0));
+        }
+    }else{
+        alert("Please upload a valid .csv file")
+    }
 
+    return modules
 }
+
