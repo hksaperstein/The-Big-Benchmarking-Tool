@@ -58,3 +58,10 @@ function parse_csv() {
     return modules
 }
 
+function parse_keywords(){
+    let sdg1_count = 0;
+
+
+
+
+}
