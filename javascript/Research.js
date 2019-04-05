@@ -1,20 +1,43 @@
-function parse_json(){
-    let file = document.getElementById("research_file").value;
+class Research {
 
-    var reader = new FileReader();
+    constructor(type, title, author, abstract, numSDGs, SDGs){
+        this.type = type;
+        this.title = title;
+        this.author = author;
+        this.abstract = abstract;
+        this.numSDGs = numSDGs;
+        this. SDGs = SDGs;
+    }
 
-    // Closure to capture the file information.
-    reader.onload = (function (theFile) {
-        return function (e) {
-            console.log('e readAsText = ', e);
-            console.log('e readAsText target = ', e.target);
-            try {
+}
+
+function parse_json_file() {
+    let fileUpload = document.getElementById("research_file");
+
+    let regex = /^([a-zA-Z0-9\s_\\.\-:])+(.json|.JSON)$/;
+    let json;
+    if (regex.test(fileUpload.value.toLowerCase())) {
+        if (typeof (FileReader) != "undefined") {
+            let reader = new FileReader();
+            reader.onload = function (e) {
                 json = JSON.parse(e.target.result);
-                alert('json global var has been set to parsed json of this file here it is unevaled = \n' + JSON.stringify(json));
-            } catch (ex) {
-                alert('ex when trying to parse json = ' + ex);
-            }
-        }
-    })
+                parse_json(json)
 
+            };
+            reader.readAsText(fileUpload.files.item(0));
+
+
+        }
+
+    } else {
+        alert("Please upload a valid .json file")
+    }
+}
+
+
+
+function parse_json(json) {
+    let sdg_count ={
+        
+    }
 }
