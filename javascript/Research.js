@@ -1,6 +1,6 @@
 class Research {
 
-    constructor(type = null, title = null, author = null, abstract = null, numSDG = 0, SDGs = []){
+    constructor(type = null, title = null, authors = [], abstract = null, numSDG = 0, SDGs = []){
         //type of publication
         this.type = type;
 
@@ -9,7 +9,7 @@ class Research {
 
         //primary author of publication
         //todo add multi-author functionality
-        this.author = author;
+        this.authors = authors;
         this.abstract = abstract;
         this.numSDG = numSDG;
         this. SDGs = SDGs;
@@ -216,6 +216,7 @@ function parse_json(json){
         "sdg17": 0
     };
     let sdg_codes = {
+        "authors":[],
         "mult2": [],
         "mult3": [],
         "sdg1": [],
@@ -241,7 +242,7 @@ function parse_json(json){
         let json_element = json[i];
         // console.log(json_element);
         let research_element = create_research(json_element);
-
+        // console.log(research_element);
         sdg_count.research_element_count += 1;
         if(keywordRegex.test(research_element.abstract) || keywordRegex.test(research_element.title)){
             sdg_count.sustainability_count += 1;
@@ -355,6 +356,12 @@ function parse_json(json){
         // console.log(research_element);
         if(research_element.type === "article") {
             sdg_count.article_count += 1;
+            if(research_element.numSDG > 0){
+                for(let i = 0; i < research_element.authors.length; i++){
+                    sdg_codes.authors.push(research_element.authors[i])
+                }
+
+            }
             if (research_element.numSDG === 1) {
                 sdg_count.researchW1 += 1;
             } else if (research_element.numSDG === 2) {
@@ -364,6 +371,7 @@ function parse_json(json){
             }
         }
     }
+    console.log(sdg_codes.authors)
     console.log(sdg_count.article_count);
     console.log(sdg_count.researchW1);
     console.log(sdg_count.researchW2);
@@ -380,7 +388,11 @@ function parse_json(json){
 function create_research(json_element) {
     let research_element = new Research();
     research_element.type = json_element.type;
-    research_element.author = json_element.firstname.given + ' ' +json_element.firstname.family
+    for(let i = 0; i < json_element.creators.length; i++){
+        // console.log(json_element.creators[i]);
+        research_element.authors.push(json_element.creators[i].name.given + ' ' +json_element.creators[i].name.family);
+    }
+
     research_element.title = json_element.title;
     if(json_element.hasOwnProperty('abstract')){
         research_element.abstract = json_element.abstract;
