@@ -8,7 +8,7 @@ class Research {
         this.title = title;
 
         //primary author of publication
-        //todo add multi-author functionality
+
         this.authors = authors;
         this.abstract = abstract;
         this.numSDG = numSDG;
@@ -193,10 +193,10 @@ function parse_json(json){
     let sdg_count = {
         "research_element_count": 0,
         "sustainability_count": 0,
-        "article_count": 0,
-        "researchW1": 0,
-        "researchW2": 0,
-        "researchW3": 0,
+        "document_count": 0,
+        //  number of sustainability related research that relate to multiple SDGs
+        "researchWSDG_count": (new Array(18)).fill(0),
+        // number of sustainability related research that relate to each respective SDG, including multiples
         "sdg1": 0,
         "sdg2": 0,
         "sdg3": 0,
@@ -244,142 +244,133 @@ function parse_json(json){
         let research_element = create_research(json_element);
         // console.log(research_element);
         sdg_count.research_element_count += 1;
-        if(keywordRegex.test(research_element.abstract) || keywordRegex.test(research_element.title)){
-            sdg_count.sustainability_count += 1;
-        }
+        // if(keywordRegex.test(research_element.abstract) || keywordRegex.test(research_element.title)){
+        //     sdg_count.sustainability_count += 1;
+        // }
 
-        if(sdg1Regex.test(research_element.abstract) || sdg1Regex.test(research_element.title)){
-            sdg_count.sdg1 += 1;
-            research_element.numSDG += 1;
-            research_element.SDGs.push("SDG1");
-            sdg_codes.sdg1.push(research_element)
-        }
-        if(sdg2Regex.test(research_element.abstract) || sdg2Regex.test(research_element.title)){
-            sdg_count.sdg2 += 1;
-            research_element.numSDG += 1;
-            research_element.SDGs.push("SDG2");
-            sdg_codes.sdg2.push(research_element)
-        }
-        if(sdg3Regex.test(research_element.abstract) || sdg3Regex.test(research_element.title)){
-            sdg_count.sdg3 += 1;
-            research_element.numSDG += 1;
-            research_element.SDGs.push("SDG3");
-            sdg_codes.sdg3.push(research_element)
-        }
-        if(sdg4Regex.test(research_element.abstract) || sdg4Regex.test(research_element.title)){
-            sdg_count.sdg4 += 1;
-            research_element.numSDG += 1;
-            research_element.SDGs.push("SDG4");
-            sdg_codes.sdg4.push(research_element)
-        }
-        if(sdg5Regex.test(research_element.abstract) || sdg5Regex.test(research_element.title)){
-            sdg_count.sdg5 += 1;
-            research_element.numSDG += 1;
-            research_element.SDGs.push("SDG5");
-            sdg_codes.sdg5.push(research_element)
-        }
-        if(sdg6Regex.test(research_element.abstract) || sdg6Regex.test(research_element.title)){
-            sdg_count.sdg6 += 1;
-            research_element.numSDG += 1;
-            research_element.SDGs.push("SDG6");
-            sdg_codes.sdg6.push(research_element)
-        }
+        if(research_element.type === "article" || research_element.type === "thesis" || research_element.type === "book" || research_element.type === "conference_item" || research_element.type === "book_section" || research_element.type === "report") {
 
-        if(sdg7Regex.test(research_element.abstract) || sdg7Regex.test(research_element.title)) {
-            sdg_count.sdg7 += 1;
-            research_element.numSDG += 1;
-            research_element.SDGs.push("SDG7");
-            sdg_codes.sdg7.push(research_element)
-        }
-        if(sdg8Regex.test(research_element.abstract) || sdg8Regex.test(research_element.title)){
-            sdg_count.sdg8 += 1;
-            research_element.numSDG += 1;
-            research_element.SDGs.push("SDG8");
-            sdg_codes.sdg8.push(research_element)
-        }
-        if(sdg9Regex.test(research_element.abstract) || sdg9Regex.test(research_element.title)){
-            sdg_count.sdg9 += 1;
-            research_element.numSDG += 1;
-            research_element.SDGs.push("SDG9");
-            sdg_codes.sdg9.push(research_element)
-        }
-        if(sdg10Regex.test(research_element.abstract) || sdg10Regex.test(research_element.title)){
-            sdg_count.sdg10 += 1;
-            research_element.numSDG += 1;
-            research_element.SDGs.push("SDG10");
-            sdg_codes.sdg10.push(research_element)
-        }
-        if(sdg11Regex.test(research_element.abstract) || sdg11Regex.test(research_element.title)){
-            sdg_count.sdg11 += 1;
-            research_element.numSDG += 1;
-            research_element.SDGs.push("SDG11");
-            sdg_codes.sdg11.push(research_element)
-        }
-        if(sdg12Regex.test(research_element.abstract) || sdg12Regex.test(research_element.title)){
-            sdg_count.sdg12 += 1;
-            research_element.numSDG += 1;
-            research_element.SDGs.push("SDG12");
-            sdg_codes.sdg12.push(research_element)
-        }
+            if(sdg1Regex.test(research_element.abstract) || sdg1Regex.test(research_element.title)){
+                sdg_count.sdg1 += 1;
+                research_element.numSDG += 1;
+                research_element.SDGs.push("SDG1");
+                sdg_codes.sdg1.push(research_element)
+            }
+            if(sdg2Regex.test(research_element.abstract) || sdg2Regex.test(research_element.title)){
+                sdg_count.sdg2 += 1;
+                research_element.numSDG += 1;
+                research_element.SDGs.push("SDG2");
+                sdg_codes.sdg2.push(research_element)
+            }
+            if(sdg3Regex.test(research_element.abstract) || sdg3Regex.test(research_element.title)){
+                sdg_count.sdg3 += 1;
+                research_element.numSDG += 1;
+                research_element.SDGs.push("SDG3");
+                sdg_codes.sdg3.push(research_element)
+            }
+            if(sdg4Regex.test(research_element.abstract) || sdg4Regex.test(research_element.title)){
+                sdg_count.sdg4 += 1;
+                research_element.numSDG += 1;
+                research_element.SDGs.push("SDG4");
+                sdg_codes.sdg4.push(research_element)
+            }
+            if(sdg5Regex.test(research_element.abstract) || sdg5Regex.test(research_element.title)){
+                sdg_count.sdg5 += 1;
+                research_element.numSDG += 1;
+                research_element.SDGs.push("SDG5");
+                sdg_codes.sdg5.push(research_element)
+            }
+            if(sdg6Regex.test(research_element.abstract) || sdg6Regex.test(research_element.title)){
+                sdg_count.sdg6 += 1;
+                research_element.numSDG += 1;
+                research_element.SDGs.push("SDG6");
+                sdg_codes.sdg6.push(research_element)
+            }
 
-        if(sdg13Regex.test(research_element.abstract) || sdg13Regex.test(research_element.title)){
-            sdg_count.sdg13 += 1;
-            research_element.numSDG += 1;
-            research_element.SDGs.push("SDG13");
-            sdg_codes.sdg13.push(research_element)
-        }
+            if(sdg7Regex.test(research_element.abstract) || sdg7Regex.test(research_element.title)) {
+                sdg_count.sdg7 += 1;
+                research_element.numSDG += 1;
+                research_element.SDGs.push("SDG7");
+                sdg_codes.sdg7.push(research_element)
+            }
+            if(sdg8Regex.test(research_element.abstract) || sdg8Regex.test(research_element.title)){
+                sdg_count.sdg8 += 1;
+                research_element.numSDG += 1;
+                research_element.SDGs.push("SDG8");
+                sdg_codes.sdg8.push(research_element)
+            }
+            if(sdg9Regex.test(research_element.abstract) || sdg9Regex.test(research_element.title)){
+                sdg_count.sdg9 += 1;
+                research_element.numSDG += 1;
+                research_element.SDGs.push("SDG9");
+                sdg_codes.sdg9.push(research_element)
+            }
+            if(sdg10Regex.test(research_element.abstract) || sdg10Regex.test(research_element.title)){
+                sdg_count.sdg10 += 1;
+                research_element.numSDG += 1;
+                research_element.SDGs.push("SDG10");
+                sdg_codes.sdg10.push(research_element)
+            }
+            if(sdg11Regex.test(research_element.abstract) || sdg11Regex.test(research_element.title)){
+                sdg_count.sdg11 += 1;
+                research_element.numSDG += 1;
+                research_element.SDGs.push("SDG11");
+                sdg_codes.sdg11.push(research_element)
+            }
+            if(sdg12Regex.test(research_element.abstract) || sdg12Regex.test(research_element.title)){
+                sdg_count.sdg12 += 1;
+                research_element.numSDG += 1;
+                research_element.SDGs.push("SDG12");
+                sdg_codes.sdg12.push(research_element)
+            }
 
-        if(sdg14Regex.test(research_element.abstract) || sdg14Regex.test(research_element.title)){
-            sdg_count.sdg14 += 1;
-            research_element.numSDG += 1;
-            research_element.SDGs.push("SDG14");
-            sdg_codes.sdg14.push(research_element)
-        }
-        if(sdg15Regex.test(research_element.abstract) || sdg15Regex.test(research_element.title)){
-            sdg_count.sdg15 += 1;
-            research_element.numSDG += 1;
-            research_element.SDGs.push("SDG15");
-            sdg_codes.sdg15.push(research_element)
-        }
-        if(sdg16Regex.test(research_element.abstract) || sdg16Regex.test(research_element.title)){
-            sdg_count.sdg16 += 1;
-            research_element.numSDG += 1;
-            research_element.SDGs.push("SDG16");
-            sdg_codes.sdg16.push(research_element)
-        }
-        if(sdg17Regex.test(research_element.abstract) || sdg17Regex.test(research_element.title)){
-            sdg_count.sdg17 += 1;
-            research_element.numSDG += 1;
-            research_element.SDGs.push("SDG17");
-            sdg_codes.sdg17.push(research_element)
-        }
-        // console.log(research_element);
-        if(research_element.type === "article") {
-            sdg_count.article_count += 1;
-            if(research_element.numSDG > 0){
-                for(let i = 0; i < research_element.authors.length; i++){
-                    sdg_codes.authors.push(research_element.authors[i])
+            if(sdg13Regex.test(research_element.abstract) || sdg13Regex.test(research_element.title)){
+                sdg_count.sdg13 += 1;
+                research_element.numSDG += 1;
+                research_element.SDGs.push("SDG13");
+                sdg_codes.sdg13.push(research_element)
+            }
+
+            if(sdg14Regex.test(research_element.abstract) || sdg14Regex.test(research_element.title)){
+                sdg_count.sdg14 += 1;
+                research_element.numSDG += 1;
+                research_element.SDGs.push("SDG14");
+                sdg_codes.sdg14.push(research_element)
+            }
+            if(sdg15Regex.test(research_element.abstract) || sdg15Regex.test(research_element.title)){
+                sdg_count.sdg15 += 1;
+                research_element.numSDG += 1;
+                research_element.SDGs.push("SDG15");
+                sdg_codes.sdg15.push(research_element)
+            }
+            if(sdg16Regex.test(research_element.abstract) || sdg16Regex.test(research_element.title)){
+                sdg_count.sdg16 += 1;
+                research_element.numSDG += 1;
+                research_element.SDGs.push("SDG16");
+                sdg_codes.sdg16.push(research_element)
+            }
+            if(sdg17Regex.test(research_element.abstract) || sdg17Regex.test(research_element.title)){
+                sdg_count.sdg17 += 1;
+                research_element.numSDG += 1;
+                research_element.SDGs.push("SDG17");
+                sdg_codes.sdg17.push(research_element)
+            }
+                sdg_count.document_count += 1;
+                if(research_element.numSDG > 0){
+                    for(let i = 0; i < research_element.authors.length; i++){
+                        sdg_codes.authors.push(research_element.authors[i])
+                    }
+
                 }
+                sdg_count.researchWSDG_count[research_element.numSDG] += 1
 
-            }
-            if (research_element.numSDG === 1) {
-                sdg_count.researchW1 += 1;
-            } else if (research_element.numSDG === 2) {
-                sdg_count.researchW2 += 1;
-            } else if (research_element.numSDG === 3) {
-                sdg_count.researchW3 += 1;
-            }
         }
-    }
-    console.log(sdg_codes.authors)
-    console.log(sdg_count.article_count);
-    console.log(sdg_count.researchW1);
-    console.log(sdg_count.researchW2);
-    console.log(sdg_count.researchW3);
 
-        // console.log(sdg_count.sustainability_count);
+
+    }
+    // console.log(sdg_count.sustainability_count);
     // console.log(sdg_count.research_element_count);
-    // console.log(sdg_count);
+    console.log(sdg_count);
     // console.log(sdg_codes);
 
 
