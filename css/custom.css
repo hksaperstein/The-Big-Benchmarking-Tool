@@ -1,0 +1,26 @@
+
+.nav{
+    background-color: rgb(226, 125, 96);
+}
+
+.nav-link{
+    color: white;
+}
+
+
+.btn-info {
+    background-color: rgb(226, 125, 96);
+    border-color: #9CD8E9;
+}
+
+.btn-info:hover{
+    color: black;
+    background-color: #9CD8E9;
+    cursor: pointer;
+}
+
+p{
+    text-indent: .5in;
+}
+
+

@@ -2,28 +2,91 @@
 
 
 <html lang="en">
-    <link rel="stylesheet" href="../styles.css">
+    <!--<link rel="stylesheet" href="../custom.css">-->
     <head>
+        <link rel="stylesheet" href="../css/Bootstrap/css/bootstrap.css">
+        <link rel="stylesheet" href="../css/custom.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta charset="UTF-8">
         <title>About The Tool</title>
     </head>
     <body>
-        <div id="main_header" class="header_bar">
-            <h2 class="header_tabs">
-                <button class="header_button" id="index_button" onclick="location.href='./index.html'">Home</button>
-                <button class="header_button" id="about_button" onclick="location.href='./about.html'">About</button>
-                <button class="header_button" id="curriculum_button" onclick="location.href='./curriculum.html'">Curriculum Tool</button>
-                <button class="header_button" id="research_button" onclick="location.href='./research.html'">Research Tool</button>
-                <button class="header_button" id="disclaimer_button" onclick="location.href='./disclaimer.html'">Disclaimer</button>
-                <button class="header_button" id="keywords" onclick="location.href='./keywords.html'">Keywords</button>
-                <button class="header_button" id="SDGs_button" onclick="window.open('https://www.un.org/sustainabledevelopment/sustainable-development-goals', '_blank')">SDGs</button>
-            </h2>
+        <div class="sticky-top">
+            <ul class="nav nav-tabs justify-content-end">
+                <li class="nav-item">
+                    <a class="nav-link" href="./index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="./about.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./curriculum.html">Curriculum Tool</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./research.html">Research Tool</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./disclaimer.html">Disclaimer</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./keywords.html">Keywords</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.un.org/sustainabledevelopment/sustainable-development-goals" target="_blank">SDGs</a>
+                </li>
+            </ul>
         </div>
-      <h1>About The Tool</h1>
-      <h2>Validation of Scoring and Questions:</h2>
+        <div class="d-flex align-items-center flex-column justify-content-center mr-auto">
 
-      <h2>Validation of Keywords:</h2>
+            <h1>About The Tool</h1>
+            <div id="about_the_tool" class="px-5">
+                <p>
+                    Promoting the Sustainability Development Goals in and out of the classroom.
+                    The Big Benchmarking Tool was created to help universities analyze the amount of sustainability being taught in the curriculum and researched by faculty.
+                    It was created by students from the Worcester Polytechnic Institute in collaboration with the University of Worcester and Kingston University.<br>
+                </p>
+                <p>
+                    The tool consists of two parts, the Curriculum Tool and the Research Tool.
+                    The Curriculum Tool examines the amount of sustainability taught in the available modules and how many students are taking those courses in the formal section of the tool.
+                    It also evaluates the amount of sustainability that students are interacting with through events and other organizations in the informal section of the tool.<br>
+                </p>
+                <p>
+                    The Research Tool analyzes the amount of research being done on sustainability-related topics in the formal section of the tool.
+                    It also looks at what incentives and policies are in place to increase research on sustainability in the informal portion of the tool.<br>
+                </p>
+                <p>
+                    Any or all of these sections of the tool can be completed at any time.
+                    The tool allows universities to track their progress on any single question and questions can be skipped if a university feels they are not relevant to their efforts.
+                </p>
+            </div>
 
+            <h2>Validation of Scoring and Questions:</h2>
+
+            <h2>Validation of Keywords</h2>
+            <div class="px-5">
+                <p>
+                    Our original set of keywords came from the past IQP: Critiquing and Developing Benchmarking Tools for Sustainability.
+                    These keywords are summarized from The United Nations, General Assembly, “Transforming Our World: The 2030 Agenda for Sustainable Development” 17 Sustainable Development Goals.
+                    The next IQP, Implementing and Critiquing the Higher-Ed. Sustainability Evaluation Tool, took this keyword list and applied it to searching for sustainability related modules.
+                    After initially running the module database software they received a result of 10.8 % sustainability related modules.
+                    After completing a validity analysis of 20% of the flagged modules and 5% of non flagged modules and found 21.47% false positives and 10.71% false negatives.
+                    Taking these percentages into consideration the actual amount of sustainability related modules was calculated to be 16.57%.
+                </p>
+                <p>
+                    We expanded upon the original set of keywords to include 322 key words/phrases.
+                    We found most of these keywords on The Compiled Keywords for SDG Mapping <a href="http://ap-unsdsn.org/wp-content/uploads/2017/04/Compiled-Keywords-for-SDG-Mapping_Final_17-05-10.xlsx" target="_blank">The Compiled Keywords for SDG Mapping</a>.
+                    A list of sustainability related keywords compiled by Australian Universities.
+                    As well as adding keywords we removed some keywords from the original list that were found to produce too many false positives.
+                    After adding the new list to our module analyzing software we found that 15.48% of modules at the University of Worcester were sustainability related, which was similar to the final percentage the past IQP had estimated.
+                    This similarity to the calculated actual sustainability module percentage showed that the keyword list is accurate to sustainability terminology used in module descriptions.
+
+                </p>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     </body>
 
 </html>

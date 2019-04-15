@@ -213,7 +213,9 @@ function parse_json(json){
         "sdg14": 0,
         "sdg15": 0,
         "sdg16": 0,
-        "sdg17": 0
+        "sdg17": 0,
+        "total_authors": 0,
+        "total_sus_authors": 0
     };
     let sdg_codes = {
         "authors":[],
@@ -237,19 +239,30 @@ function parse_json(json){
         "sdg16": [],
         "sdg17": [],
     };
-
+    let total_author_set = new Set();
+    let total_sus_author_set = new Set();
     for(let i = 0; i < json.length; i++){
         let json_element = json[i];
         // console.log(json_element);
         let research_element = create_research(json_element);
         // console.log(research_element);
+
         sdg_count.research_element_count += 1;
-        // if(keywordRegex.test(research_element.abstract) || keywordRegex.test(research_element.title)){
-        //     sdg_count.sustainability_count += 1;
-        // }
+
 
         if(research_element.type === "article" || research_element.type === "thesis" || research_element.type === "book" || research_element.type === "conference_item" || research_element.type === "book_section" || research_element.type === "report") {
+            // console.log(research_element.authors)
+            for(let i = 0; i < research_element.authors.length; i++){
+                // console.log(research_element.authors[i]);
+                total_author_set.add(research_element.authors[i])
+            }
+            if(keywordRegex.test(research_element.abstract) || keywordRegex.test(research_element.title)){
+                sdg_count.sustainability_count += 1;
+                for(let i = 0; i < research_element.authors.length; i++){
+                    total_sus_author_set.add(research_element.authors[i])
+                }
 
+            }
             if(sdg1Regex.test(research_element.abstract) || sdg1Regex.test(research_element.title)){
                 sdg_count.sdg1 += 1;
                 research_element.numSDG += 1;
@@ -368,9 +381,12 @@ function parse_json(json){
 
 
     }
+    sdg_count.total_authors += total_author_set.size;
+    sdg_count.total_sus_authors += total_sus_author_set.size;
     // console.log(sdg_count.sustainability_count);
     // console.log(sdg_count.research_element_count);
     console.log(sdg_count);
+
     // console.log(sdg_codes);
 
 
@@ -380,7 +396,7 @@ function create_research(json_element) {
     let research_element = new Research();
     research_element.type = json_element.type;
     for(let i = 0; i < json_element.creators.length; i++){
-        // console.log(json_element.creators[i]);
+        console.log(json_element.creators[i]);
         research_element.authors.push(json_element.creators[i].name.given + ' ' +json_element.creators[i].name.family);
     }
 

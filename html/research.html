@@ -5,23 +5,39 @@
 
 <html lang="en">
 
-    <link rel="stylesheet" href="../styles.css">
+    <!--<link rel="stylesheet" href="../custom.css">-->
     <head>
+        <link rel="stylesheet" href="../css/Bootstrap/css/bootstrap.css">
+        <link rel="stylesheet" href="../css/custom.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta charset="UTF-8">
         <title>Research Tool</title>
-        <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
     </head>
     <body>
-        <div id="main_header" class="header_bar">
-            <h2 class="header_tabs">
-                <button class="header_button" id="index_button" onclick="location.href='./index.html'">Home</button>
-                <button class="header_button" id="about_button" onclick="location.href='./about.html'">About</button>
-                <button class="header_button" id="curriculum_button" onclick="location.href='./curriculum.html'">Curriculum Tool</button>
-                <button class="header_button" id="research_button" onclick="location.href='./research.html'">Research Tool</button>
-                <button class="header_button" id="disclaimer_button" onclick="location.href='./disclaimer.html'">Disclaimer</button>
-                <button class="header_button" id="keywords" onclick="location.href='./keywords.html'">Keywords</button>
-                <button class="header_button" id="SDGs_button" onclick="window.open('https://www.un.org/sustainabledevelopment/sustainable-development-goals', '_blank')">SDGs</button>
-            </h2>
+        <div class="sticky-top">
+            <ul class="nav nav-tabs justify-content-end">
+                <li class="nav-item ">
+                    <a class="nav-link " href="./index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./about.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./curriculum.html">Curriculum Tool</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active " href="./research.html">Research Tool</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./disclaimer.html">Disclaimer</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./keywords.html">Keywords</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.un.org/sustainabledevelopment/sustainable-development-goals" target="_blank">SDGs</a>
+                </li>
+            </ul>
         </div>
 
     <h1> Research Tool </h1>
@@ -159,7 +175,9 @@
         </div>
     </div>
 
-
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     </body>
 
 </html>
