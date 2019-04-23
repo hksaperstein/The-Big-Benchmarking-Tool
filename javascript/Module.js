@@ -60,7 +60,8 @@ function parse_csv(){
 
                 for(let i = 1; i < rows.length; i++) {
                     let cols = rows[i].split(",");
-                    if (cols[4] < 4 && cols[3] !== "N") {
+                    console.log(cols);
+                    if(cols[4] !== ' '){
                         let module = new Module();
                         module.setCode(cols[0]);
                         module.setTitle(cols[1]);

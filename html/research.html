@@ -1,183 +1,285 @@
 <!DOCTYPE html>
-<script src="../javascript/research_functions.js" ></script>
-<script src="../javascript/modals.js" ></script>
-<script src="../javascript/Research.js" ></script>
+<script src="../javascript/disclaimer.js" ></script>
 
+<script src="../javascript/Curriculum.js" ></script>
+<script src="../javascript/modals.js" ></script>
+<script src="../javascript/Module.js"></script>
 <html lang="en">
 
-    <!--<link rel="stylesheet" href="../custom.css">-->
-    <head>
-        <link rel="stylesheet" href="../css/Bootstrap/css/bootstrap.css">
-        <link rel="stylesheet" href="../css/custom.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta charset="UTF-8">
-        <title>Research Tool</title>
-    </head>
-    <body>
-        <div class="sticky-top">
-            <ul class="nav nav-tabs justify-content-end">
-                <li class="nav-item ">
-                    <a class="nav-link " href="./index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./about.html">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./curriculum.html">Curriculum Tool</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active " href="./research.html">Research Tool</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./disclaimer.html">Disclaimer</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./keywords.html">Keywords</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="https://www.un.org/sustainabledevelopment/sustainable-development-goals" target="_blank">SDGs</a>
-                </li>
-            </ul>
-        </div>
+<!--<link rel="stylesheet" href="../custom.css">-->
+<!--<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">-->
 
-    <h1> Research Tool </h1>
-        <p>
-            The research tool examines the amount of sustainability related topics or themes that are present in research efforts at a university. This consists of published articles and authors, as well as what efforts are made to increase sustainability knowledge.
-        </p>
-        <p>
-            The tool is split into two sections, formal and informal. Formal consists of the research that is being performed. These questions are answered with percentages. Informal consists of questions that are important to increase the amount of sustainability related research being done. They are mainly answered with yes or no responses.
-        </p>
-    <h2> Insert Research database (.json): </h2>
-    <input id="research_file" type="file" name="myFile" accept=".json, .JSON">
-    <input id="research_file_submit" type="submit" onclick="parse_json_file()">
-    <h3>Formal Curriculum</h3>
-    <form>
-        <h4> R1 </h4>
-        <div>
-            <p>
-                Percentage of funding from grants and contracts specifying sustainability-related research, relative to the total funding from grants and contracts at the institution, as a percentage.
-            </p>
-            <input type="number" placeholder="answer">
-            <input type="button" value="More info" onclick="open_modal(1, 'research_modal')">
-        </div>
-
-        <h4> R2 </h4>
-        <p>
-            Percentage of published research articles with a focus on sustainability-related issues, relative to the total number of research publications in all areas, as a percentage.        </p>
-        <input type="number" placeholder="answer">
-        <input type="button" value="More info" onclick="open_modal(2, 'research_modal')">
-        <h4> R3 </h4>
-        <p>
-            Percentage of the institution’s academic staff that are currently engaged in sustainability research, relative to the total amount of academic staff who conduct research, as a percentage.
-        </p>
-        <input type="number" placeholder="answer">
-        <input type="button" value="More info" onclick="open_modal(3, 'research_modal')">
-        <h4> R4 </h4>
-        <p>
-            Percentage of academic departments that include at least one academic staff member that conducts sustainability research compared to other areas of research, relative to the total number of academic departments, as a percentage.        </p>
-        <input type="number" placeholder="answer">
-        <input type="button" value="More info" onclick="open_modal(4, 'research_modal')">
-        <h3> Informal Curriculum </h3>
-        <h4> R5 </h4>
-        <p>
-            Question info
-        </p>
-        <input type="number" placeholder="answer">
-        <input type="button" value="More info" onclick="open_modal(5, 'research_modal')">
-        <h4> R6 </h4>
-        <p>
-            Does the institution have an ongoing program to encourage students in multiple disciplines or academic programs to conduct research in sustainability?
-        </p>
-        <input type="number" placeholder="answer">
-        <input type="button" value="More info" onclick="open_modal(6, 'research_modal')">
-        <h4> R7 </h4>
-        <p>
-            Does the institution have a program to encourage academic staff from multiple disciplines or academic programs to conduct research in sustainability topics? (To count, the program must provide faculty with incentives to research sustainability and specifically aim to increase faculty sustainability research)
-        </p>
-        <input type="number" placeholder="answer">
-        <input type="button" value="More info" onclick="open_modal(7, 'research_modal')">
-        <h4> R8 </h4>
-        <p>
-            Has the institution published written policies and procedures that give positive recognition to interdisciplinary, transdisciplinary, and multidisciplinary research during faculty promotion and/or tenure decisions?
-        </p>
-        <input type="number" placeholder="answer">
-        <input type="button" value="More info" onclick="open_modal(8, 'research_modal')">
-        <h4> R9 </h4>
-        <p>
-            Does the institution have ongoing library support for sustainability research and learning in the form of research guides, materials selection policies and practices, curriculum development efforts, sustainability literacy promotion, and/or e-learning objects focused on sustainability?
-        </p>
-        <input type="number" placeholder="answer">
-        <input type="button" value="More info" onclick="open_modal(9, 'research_modal')">
-        <h4> R10 </h4>
-        <p>
-            Does the institution provide financial incentives to support open access publishing, e.g., a publishing fund to support faculty members with article processing and other open access publication charges?
-        </p>
-        <input type="number" placeholder="answer">
-        <input type="button" value="More info" onclick="open_modal(10, 'research_modal')">
-    </form>
-
-
-    <!--MODAL-->
-    <div id="research_modal" class="modal">
-        <div class="modal_content">
-            <header class="modal_container modal_header">
-                <h2>Research</h2>
-                <span class="modal_button modal_close" onclick="close_modal('research_modal')">
-                    &times;
-                </span>
-            </header>
-
-            <div class="modal_tabs modal_bottom_border">
-                <button class="tab modal_button" onclick="open_question(event, 'r1')">R1</button>
-                <button class="tab modal_button" onclick="open_question(event, 'r2')">R2</button>
-                <button class="tab modal_button" onclick="open_question(event, 'r3')">R3</button>
-                <button class="tab modal_button" onclick="open_question(event, 'r4')">R4</button>
-                <button class="tab modal_button" onclick="open_question(event, 'r5')">R5</button>
-                <button class="tab modal_button" onclick="open_question(event, 'r6')">R6</button>
-                <button class="tab modal_button" onclick="open_question(event, 'r7')">R7</button>
-                <button class="tab modal_button" onclick="open_question(event, 'r8')">R8</button>
-                <button class="tab modal_button" onclick="open_question(event, 'r9')">R9</button>
-                <button class="tab modal_button" onclick="open_question(event, 'r10')">R10</button>
-            </div>
-
-
-            <div id="r1" class="modal_container question">
-                <h1>C1</h1>
-            </div>
-            <div id="r2" class="modal_container question">
-                <h1>C2</h1>
-            </div>
-            <div id="r3" class="modal_container question">
-                <h1>C3</h1>
-            </div>
-            <div id="r4" class="modal_container question">
-                <h1>C4</h1>
-            </div>
-            <div id="r5" class="modal_container question">
-                <h1>C5</h1>
-            </div>
-            <div id="r6" class="modal_container question">
-                <h1>C6</h1>
-            </div>
-            <div id="r7" class="modal_container question">
-                <h1>C7</h1>
-            </div>
-            <div id="r8" class="modal_container question">
-                <h1>C8</h1>
-            </div>
-            <div id="r9" class="modal_container question">
-                <h1>C9</h1>
-            </div>
-            <div id="r10" class="modal_container question">
-                <h1>C10</h1>
-            </div>
-
-        </div>
+<head>
+    <link rel="stylesheet" href="../css/Bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../css/custom.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="UTF-8">
+    <title>Curriculum Tool</title>
+    <!--<script>-->
+        <!--disclaimer()-->
+    <!--</script>-->
+</head>
+<body>
+    <div class="sticky-top">
+        <ul class="nav nav-tabs justify-content-end">
+            <li class="nav-item">
+                <a class="nav-link" href="./index.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="./about.html">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="./curriculum.html">Curriculum Tool</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="./research.html">Research Tool</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="./keywords.html">Keywords</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://www.un.org/sustainabledevelopment/sustainable-development-goals" target="_blank">SDGs</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://www2.worc.ac.uk/informationassurance" target="_blank">Disclaimer</a>
+            </li>
+        </ul>
     </div>
+    <div class="d-flex flex-column align-items-center px-5">
+        <h1> Research Tool </h1>
+        <p>
+            Welcome to the research benchmarking tool.
+            The research tool examines the amount of sustainability related topics or themes that are present in research efforts at a university.
+            This consists of published articles and authors, as well as what efforts are made to increase sustainability knowledge.
+        </p>
+        <p>
+            The tool is split into two sections, formal and informal.
+            Formal consists of the research that is being performed. These questions are answered with percentages.
+            Informal consists of questions that are important to increase the amount of sustainability related research being done.
+            They are mainly answered with yes or no responses.
+        </p>
 
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    </body>
+
+
+        <form class="px-5 pb-5 d-flex flex-column align-items-center">
+
+            <h2>Formal Research</h2>
+            <p id="formal_research">
+                The formal research tool examines research being completed and research that has been published.
+                The questions in the formal research tool are answered with percentages.
+                The formal research tool also makes use of the Research analyzer software which searches an institution’s research database for publications related to sustainability.
+                Results from the formal research tool will give data showing how much focus is put on sustainability related research at the higher education institution.
+            </p>
+            <p>
+                The tool is run on a json file of consisting of research articles titles, abstracts, and creators for all published research at the university.
+            </p>
+
+            <h3> Insert research database file (.json): </h3>
+            <div class="d-flex justify-content-center">
+                <input id="curriculum_file" type="file" name="curriculum_file" accept=".json">
+                <input id="curriculum_file_submit" class="btn btn-info" type="submit" onclick="parse_json_file()">
+            </div>
+            <div class="d-flex flex-column align-items-center form-group">
+                <h4> R1 </h4>
+                <p>
+                    Percentage of grant or contract funded SDG-related research, relative to the total number of grant or contract funded research at the institution.
+                </p>
+                <div class="d-flex align-items-center p-2">
+                    <input type="number" placeholder="Percentage" step=".1">
+                    <input type="button" class="btn btn-info" value="Learn More" onclick="open_modal(1, 'curriculum_modal')">
+                </div>
+            </div>
+
+            <div class="d-flex flex-column align-items-center form-group">
+                <h4> R2 </h4>
+                <p>
+                    Percentage of published research articles with a focus on SDG themes, relative to the total number of research publications in all areas
+                </p>
+                <div class="d-flex align-items-center p-2">
+                    <input type="number" placeholder="Percentage" step=".1">
+                    <input type="button" class="btn btn-info" value="Learn More" onclick="open_modal(2, 'curriculum_modal')">
+                </div>
+            </div>
+
+            <div class="d-flex flex-column align-items-center form-group">
+                <h4> R3 </h4>
+                <p>
+                    Percentage of the institution’s academic staff that are currently engaged in sustainability research, relative to the total amount of academic staff who conduct research.
+                </p>
+                <div class="d-flex align-items-center p-2">
+
+                    <input type="number" placeholder="Percentage" step=".1">
+                    <input type="button" class="btn btn-info" value="Learn More" onclick="open_modal(3, 'curriculum_modal')">
+                </div>
+            </div>
+
+            <div class="d-flex flex-column align-items-center form-group">
+                <h4> R4 </h4>
+                <p>
+                    Percentage of academic departments that include at least one academic staff member that conducts sustainability research, relative to the total number of academic departments.
+                </p>
+                <div class="d-flex align-items-center p-2">
+                    <input type="number" placeholder="Percentage" step=".1">
+                    <input type="button" class="btn btn-info" value="Learn More" onclick="open_modal(4, 'curriculum_modal')">
+
+                </div>
+            </div>
+            <h3> Informal Curriculum </h3>
+            <div class="d-flex flex-column align-items-center form-group">
+                <h4> R5 </h4>
+                <p>
+                    Does the institution have one or more research centres or groups on campus focusing on SDG-related research?
+                </p>
+                <div class="d-flex align-items-center p-2">
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                        <label class="btn btn-info">
+                            <input type="radio" class="btn btn-info" name="yes" value="Yes" >Yes
+                        </label >
+                        <label class="btn btn-info">
+                            <input type="radio" class="btn btn-info" value="No" >No
+                        </label>
+                    </div>
+                    <input type="button" class="btn btn-info" value="Learn More" onclick="open_modal(5, 'curriculum_modal')">
+                </div>
+            </div>
+
+            <div class="d-flex flex-column align-items-center form-group" >
+                <h4> R6 </h4>
+                <p>
+                    Does the institution have an ongoing program to encourage students to conduct research on SDG topics?
+                </p>
+                <div class="d-flex align-items-center p-2">
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                        <label class="btn btn-info">
+                            <input type="radio" class="btn btn-info" name="yes" value="Yes" >Yes
+                        </label >
+                        <label class="btn btn-info">
+                            <input type="radio" class="btn btn-info" value="No" >No
+                        </label>
+                    </div>
+                    <input type="button" class="btn btn-info" value="Learn More" onclick="open_modal(6, 'curriculum_modal')">
+                </div>
+            </div>
+            <div class="d-flex flex-column align-items-center form-group">
+                <h4> R7 </h4>
+                <p>
+                    Does the institution have a program to encourage academic staff to conduct research on SDG topics?
+                </p>
+                <div class="d-flex align-items-center p-2">
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                        <label class="btn btn-info">
+                            <input type="radio" class="btn btn-info" name="yes" value="Yes" >Yes
+                        </label >
+                        <label class="btn btn-info">
+                            <input type="radio" class="btn btn-info" value="No" >No
+                        </label>
+                    </div>
+                    <input type="button" class="btn btn-info" value="Learn More" onclick="open_modal(7, 'curriculum_modal')">
+                </div>
+            </div>
+
+            <div class="d-flex flex-column align-items-center form-group">
+                <h4> R8 </h4>
+                <p>
+                    Does the institution have ongoing library support for sustainability research and learning in the form of research guides, materials selection policies and practices, curriculum development efforts, sustainability literacy promotion, and/or e-learning objects focused on sustainability?
+                </p>
+                <div class="d-flex align-items-center p-2">
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                        <label class="btn btn-info">
+                            <input type="radio" class="btn btn-info" name="yes" value="Yes" >Yes
+                        </label >
+                        <label class="btn btn-info">
+                            <input type="radio" class="btn btn-info" value="No" >No
+                        </label>
+                    </div>
+                    <input type="button" class="btn btn-info" value="Learn More" onclick="open_modal(8, 'curriculum_modal')">
+                </div>
+            </div>
+
+            <div class="d-flex flex-column align-items-center form-group">
+                <h4> R9 </h4>
+                <p>
+                    Does the institution provide financial incentives to support open access publishing, e.g., a publishing fund to support faculty members with article processing and other open access publication charges?
+                </p>
+                <div class="d-flex align-items-center p-2">
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                        <label class="btn btn-info">
+                            <input type="radio" class="btn btn-info" name="yes" value="Yes" >Yes
+                        </label >
+                        <label class="btn btn-info">
+                            <input type="radio" class="btn btn-info" value="No" >No
+                        </label>
+                    </div>
+                    <input type="button" class="btn btn-info" value="Learn More" onclick="open_modal(9, 'curriculum_modal')">
+                </div>
+            </div>
+        </form>
+    </div>
+</form>
+</div>
+
+
+<!--MODAL-->
+<div id="curriculum_modal" class="modal">
+    <div class="modal_content">
+        <header class="modal_container modal_header">
+            <h2>Research</h2>
+            <span class="modal_button modal_close" onclick="close_modal('curriculum_modal')">
+                        &times;
+                    </span>
+        </header>
+
+        <div class="modal_bar modal_bottom_border">
+            <button class="modal_tablink modal_bar_item modal_button" onclick="open_question(event, 'r1')">R1</button>
+            <button class="modal_tablink modal_bar_item modal_button" onclick="open_question(event, 'r2')">R2</button>
+            <button class="modal_tablink modal_bar_item modal_button" onclick="open_question(event, 'r3')">R3</button>
+            <button class="modal_tablink modal_bar_item modal_button" onclick="open_question(event, 'r4')">R4</button>
+            <button class="modal_tablink modal_bar_item modal_button" onclick="open_question(event, 'r5')">R5</button>
+            <button class="modal_tablink modal_bar_item modal_button" onclick="open_question(event, 'r6')">R6</button>
+            <button class="modal_tablink modal_bar_item modal_button" onclick="open_question(event, 'r7')">R7</button>
+            <button class="modal_tablink modal_bar_item modal_button" onclick="open_question(event, 'r8')">R8</button>
+            <button class="modal_tablink modal_bar_item modal_button" onclick="open_question(event, 'r9')">R9</button>
+            <button class="modal_tablink modal_bar_item modal_button" onclick="open_question(event, 'r10')">R10</button>
+        </div>
+
+
+        <div id="r1" class="modal_container question">
+            <h1>R1</h1>
+        </div>
+        <div id="r2" class="modal_container question">
+            <h1>R2</h1>
+        </div>
+        <div id="r3" class="modal_container question">
+            <h1>R3</h1>
+        </div>
+        <div id="r4" class="modal_container question">
+            <h1>R4</h1>
+        </div>
+        <div id="r5" class="modal_container question">
+            <h1>R5</h1>
+        </div>
+        <div id="r6" class="modal_container question">
+            <h1>R6</h1>
+        </div>
+        <div id="r7" class="modal_container question">
+            <h1>R7</h1>
+        </div>
+        <div id="r8" class="modal_container question">
+            <h1>R8</h1>
+        </div>
+        <div id="r9" class="modal_container question">
+            <h1>R9</h1>
+        </div>
+        <div id="r10" class="modal_container question">
+            <h1>R10</h1>
+        </div>
+
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
 
 </html>

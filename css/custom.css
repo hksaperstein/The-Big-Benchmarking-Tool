@@ -1,6 +1,6 @@
 
 .nav{
-    background-color: rgb(226, 125, 96);
+    background-color: #84bc41;
 }
 
 .nav-link{
@@ -9,18 +9,22 @@
 
 
 .btn-info {
-    background-color: rgb(226, 125, 96);
-    border-color: #9CD8E9;
+    background-color: #099ec8;
+    border-color: #099ec8;
+    margin: 0 5px 0 5px;
 }
 
 .btn-info:hover{
-    color: black;
-    background-color: #9CD8E9;
+    color: white;
+    background-color: #f9c416;
     cursor: pointer;
 }
 
 p{
     text-indent: .5in;
+    padding: 0px 0 -20px 0;
 }
 
-
+h4{
+    padding-top: 10px;
+}

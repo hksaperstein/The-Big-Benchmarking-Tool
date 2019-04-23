@@ -1,20 +1,23 @@
 <!DOCTYPE html>
+<script src="../javascript/disclaimer.js" ></script>
+
 <script src="../javascript/Curriculum.js" ></script>
 <script src="../javascript/modals.js" ></script>
 <script src="../javascript/Module.js"></script>
-<html lang="en">
+<html lang="en" >
 
     <!--<link rel="stylesheet" href="../custom.css">-->
     <!--<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">-->
 
-    <head>
+    <head >
         <link rel="stylesheet" href="../css/Bootstrap/css/bootstrap.css">
         <link rel="stylesheet" href="../css/custom.css">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta charset="UTF-8">
         <title>Curriculum Tool</title>
+
     </head>
-    <body>
+    <body >
         <div class="sticky-top">
             <ul class="nav nav-tabs justify-content-end">
                 <li class="nav-item">
@@ -30,102 +33,280 @@
                     <a class="nav-link" href="./research.html">Research Tool</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./disclaimer.html">Disclaimer</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="./keywords.html">Keywords</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="https://www.un.org/sustainabledevelopment/sustainable-development-goals" target="_blank">SDGs</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www2.worc.ac.uk/informationassurance" target="_blank">Disclaimer</a>
+                </li>
             </ul>
         </div>
-
-        <h1> Curriculum Tool </h1>
-        <p>Welcome to the curriculum benchmarking tool. This tool will benchmark sustainability in the curriculum of a higher education institution in an attempt to grade how well sustainability is being taught to its students. </p>
-        <p>We realize the importance of including sustainability education both in and outside of the classroom. For this reason we benchmark things like, the percentage of modules related to sustainability out of the total modules offered by a university as well as things like, the amount of sustainability related student organizations on campus. While researching sustainability in higher educations we realized that a majority of the focus on bringing sustainability in universities has been on the estates of the universities and teaching sustainability through extracurricular activities. Our benchmarking tool puts more focus on the in class education of sustainability, which we call the formal curriculum. However, trying to compare and score the sustainability in the formal and informal curriculum is like comparing apples to oranges. They are both important to a student learning about sustainability. Therefore we split both the curriculum and research benchmarking tools into two parts, the formal and informal, to be compared and scored separately
-        </p>
-        <h2> Insert curriculum module directory (.csv): </h2>
-        <input id="curriculum_file" type="file" name="curriculum_file" accept=".csv">
-        <input id="curriculum_file_submit" type="submit" onclick="parse_csv()">
-
-        <form>
-            <h3>Formal Curriculum</h3>
-            <p id="formal_curriculum">
-                In order to perform the formal section of the tool, you need to gain access to the module directory for your university.
-                Currently, this is tool can run on a web extension of the module directory.
-                This can either be gathered yourself or by contacting your university’s registrar or data management unit.<br><br>
-
-                The tool is run on a csv file of consisting of the module codes, module titles, and module descriptions for all undergraduate modules.
-                This can either be gathered yourself or by contacting your university’s registrar or data management unit.
-
+        <div class="d-flex flex-column align-items-center px-5">
+            <h1> Curriculum Tool </h1>
+            <p>
+                Welcome to the curriculum benchmarking tool. This tool will benchmark sustainability in the curriculum of a higher education institution in an attempt to grade how well sustainability is being taught to its students.
             </p>
-            <h4> C1 </h4>
-            <div>
-                <p>
-                    How many modules include sustainability-related topics or themes, relative to the total number of modules offered at the institution, as a percentage?
+            <p>We realize the importance of including sustainability education both in and outside of the classroom. For this reason we benchmark things like, the percentage of modules related to sustainability out of the total modules offered by a university as well as things like, the amount of sustainability related student organizations on campus. While researching sustainability in higher educations we realized that a majority of the focus on bringing sustainability in universities has been on the estates of the universities and teaching sustainability through extracurricular activities. Our benchmarking tool puts more focus on the in class education of sustainability, which we call the formal curriculum. However, trying to compare and score the sustainability in the formal and informal curriculum is like comparing apples to oranges. They are both important to a student learning about sustainability. Therefore we split both the curriculum and research benchmarking tools into two parts, the formal and informal, to be compared and scored separately</p>
+
+
+
+            <form class="px-5 pb-5 d-flex flex-column align-items-center">
+
+                <h2>Formal Curriculum</h2>
+                <p id="formal_curriculum">
+                    In order to perform the formal section of the tool, you need to gain access to the module directory for your university.
+                    Currently, this is tool can run on a web extension of the module directory.
+                    This can either be gathered yourself or by contacting your university’s registrar or data management unit.
                 </p>
-                <input type="number" placeholder="answer">
-                <input type="button" value="More info" onclick="open_modal(1, 'curriculum_modal')">
-            </div>
+                <p>
+                    The tool is run on a csv file of consisting of the module codes, module titles, and module descriptions for all undergraduate modules.
+                    This can either be gathered yourself or by contacting your university’s registrar or data management unit.
+                </p>
+                <h3> Insert curriculum module directory (.csv): </h3>
+                <div class="d-flex justify-content-center">
+                    <input id="curriculum_file" type="file" name="curriculum_file" accept=".csv">
+                    <input id="curriculum_file_submit" class="btn btn-info" type="submit" onclick="parse_csv()">
+                </div>
+                <div class="d-flex flex-column align-items-center form-group">
+                    <h4> C1 </h4>
+                        <p>
+                            Percentage of modules that include SDG-related topics or themes, relative to the total number of modules offered at the institution.
+                        </p>
+                    <div class="d-flex align-items-center p-2">
+                        <input type="number" placeholder="Percentage" step=".1">
+                        <input type="button" class="btn btn-info" value="Learn More" onclick="open_modal(1, 'curriculum_modal')">
+                    </div>
+                </div>
 
-            <h4> C2 </h4>
-            <p>
-                How many courses include sustainability related topics, themes, or modules, relative to the total number of undergraduate courses offered at the institution, as a percentage?
-            </p>
-            <input type="number" placeholder="answer">
-            <input type="button" value="More info" onclick="open_modal(2, 'curriculum_modal')">
-            <h4> C3 </h4>
-            <p>
-                How many undergraduate students have taken a sustainability-related module in the current year in relation to total number of students enrolled at the institution, as a percentage.
-            </p>
-            <input type="number" placeholder="answer">
-            <input type="button" value="More info" onclick="open_modal(3, 'curriculum_modal')">
-            <h4> C4 </h4>
-            <p>
-                How many sustainability module instances are taken in proportion to the whole undergraduate module instances?
-            </p>
-            <input type="number" placeholder="answer">
-            <input type="button" value="More info" onclick="open_modal(4, 'curriculum_modal')">
-            <h3> Informal Curriculum </h3>
-            <h4> C5 </h4>
-            <p>
-                How many student organizations have a purpose directly related to sustainability?
+                <div class="d-flex flex-column align-items-center form-group">
+                    <h4> C2 </h4>
+                    <p>
+                        Percentage of courses that include SDG-related modules relative to the total number of undergraduate courses offered at the institution.
+                    </p>
+                    <div class="d-flex align-items-center p-2">
+                        <input type="number" placeholder="Percentage" step=".1">
+                        <input type="button" class="btn btn-info" value="Learn More" onclick="open_modal(2, 'curriculum_modal')">
+                    </div>
+                </div>
 
-            </p>
-            <input type="number" placeholder="answer">
-            <input type="button" value="More info" onclick="open_modal(5, 'curriculum_modal')">
-            <h4> C6 </h4>
-            <p>
-                Does the institution maintain a sustainability website updated at least every 6 months?
-            </p>
-            <input type="number" placeholder="answer">
-            <input type="button" value="More info" onclick="open_modal(6, 'curriculum_modal')">
-            <h4> C7 </h4>
-            <p>
-                Number of university wide sustainability-focused educational programs or events offered by the student union in the last year.
-            </p>
-            <input type="number" placeholder="answer">
-            <input type="button" value="More info" onclick="open_modal(7, 'curriculum_modal')">
-            <h4> C8 </h4>
-            <p>
-                Does the institution conduct an assessment of the sustainability literacy and knowledge of its students?
-            </p>
-            <input type="number" placeholder="answer">
-            <input type="button" value="More info" onclick="open_modal(8, 'curriculum_modal')">
-            <h4> C9 </h4>
-            <p>
-                Does the institution have an ongoing program that offers incentives for academic staff in multiple disciplines or departments to develop new sustainability modules and/or incorporate sustainability into existing modules?
-            </p>
-            <input type="number" placeholder="answer">
-            <input type="button" value="More info" onclick="open_modal(9, 'curriculum_modal')">
-            <h4> C10 </h4>
-            <p>
-                How many of these sustainability areas are exposed to students through buildings, events, or programs? : ● Air & Climate ● Buildings ● Energy ● Food & Dining ● Grounds ● Purchasing ● Transportation ● Waste ● Water ● Coordination & Planning ● Diversity & Affordability ● Investment & Finance ● Public Engagement ● Wellbeing & Work
-            </p>
-            <input type="number" placeholder="answer">
-            <input type="button" value="More info" onclick="open_modal(10, 'curriculum_modal')">
-        </form>
+                <div class="d-flex flex-column align-items-center form-group">
+                    <h4> C3 </h4>
+                    <p>
+                        Percentage of undergraduate students who have taken an SDG-related module in the current year in relation to total number of students enrolled at the institution.
+                    </p>
+                    <div class="d-flex align-items-center p-2">
+
+                        <input type="number" placeholder="Percentage" step=".1">
+                        <input type="button" class="btn btn-info" value="Learn More" onclick="open_modal(3, 'curriculum_modal')">
+                    </div>
+                </div>
+
+                <div class="d-flex flex-column align-items-center form-group">
+                    <h4> C4 </h4>
+                    <p>
+                        Percentage of modules taken by students that include SDG-related topics or themes relative to the total number of modules taken by students.
+                    </p>
+                    <div class="d-flex align-items-center p-2">
+                        <input type="number" placeholder="Percentage" step=".1">
+                        <input type="button" class="btn btn-info" value="Learn More" onclick="open_modal(4, 'curriculum_modal')">
+
+                    </div>
+                </div>
+                <h3> Informal Curriculum </h3>
+                <div class="d-flex flex-column align-items-center form-group">
+                    <h4> C5 </h4>
+                    <p>
+                        How many student organizations exist with a purpose related to one of the SDGs?
+                    </p>
+                    <div class="d-flex align-items-center p-2">
+                        <input type="number" placeholder="Number">
+                        <input type="button" class="btn btn-info" value="Learn More" onclick="open_modal(5, 'curriculum_modal')">
+                    </div>
+                </div>
+
+                <div class="d-flex flex-column align-items-center form-group" >
+                    <h4> C6 </h4>
+                    <p>
+                        Have you or other sustainability-related faculty updated the sustainability website in the last 6 months?
+                    </p>
+                    <div class="d-flex align-items-center p-2">
+                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                            <label class="btn btn-info">
+                                <input type="radio" class="btn btn-info" name="yes" value="Yes" >Yes
+                            </label >
+                            <label class="btn btn-info">
+                                <input type="radio" class="btn btn-info" value="No" >No
+                            </label>
+                        </div>
+                        <input type="button" class="btn btn-info" value="Learn More" onclick="open_modal(6, 'curriculum_modal')">
+                    </div>
+                </div>
+                <div class="d-flex flex-column align-items-center form-group">
+                    <h4> C7 </h4>
+                    <p>
+                        How many SDG-focused educational programs or events engaged the students in the last year?
+                    </p>
+                    <div class="d-flex align-items-center p-2">
+                        <input type="number" placeholder="Number">
+                        <input type="button" class="btn btn-info" value="Learn More" onclick="open_modal(7, 'curriculum_modal')">
+                    </div>
+                </div>
+
+                <div class="d-flex flex-column align-items-center form-group">
+                    <h4> C8 </h4>
+                    <p>
+                        Does the university conduct a formal assessment of the sustainability literacy and knowledge of its students?
+                    </p>
+                    <div class="d-flex align-items-center p-2">
+                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                            <label class="btn btn-info">
+                                <input type="radio" class="btn btn-info" name="yes" value="Yes" >Yes
+                            </label >
+                            <label class="btn btn-info">
+                                <input type="radio" class="btn btn-info" value="No" >No
+                            </label>
+                        </div>
+                        <input type="button" class="btn btn-info" value="Learn More" onclick="open_modal(8, 'curriculum_modal')">
+                    </div>
+                </div>
+
+                <div class="d-flex flex-column align-items-center form-group">
+                    <h4> C9 </h4>
+                    <p>
+                        Does the university have an ongoing program that offers incentives for academic staff to develop new SDG-related modules and/or incorporate the SDGs into existing modules?
+                    </p>
+                    <div class="d-flex align-items-center p-2">
+                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                            <label class="btn btn-info">
+                                <input type="radio" class="btn btn-info" name="yes" value="Yes" >Yes
+                            </label >
+                            <label class="btn btn-info">
+                                <input type="radio" class="btn btn-info" value="No" >No
+                            </label>
+                        </div>
+                        <input type="button" class="btn btn-info" value="Learn More" onclick="open_modal(9, 'curriculum_modal')">
+                    </div>
+                </div>
+
+                <div class="d-flex flex-column align-items-center form-group">
+                    <h4> C10 </h4>
+                    <p>
+                        How many of the Sustainable Development Goals does the institution expose the students to outside of the classroom i.e. buildings, year-round events, or programs?
+                    </p>
+                    <div class="d-flex align-items-center p-2">
+                        <div class="flex-column">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="sdg1">
+                                <label class="form-check-label" for="sdg1">
+                                    SDG 1: No Poverty
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="sdg2" >
+                                <label class="form-check-label" for="sdg2">
+                                    GOAL 2: Zero Hunger
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="sdg3" >
+                                <label class="form-check-label" for="sdg3">
+                                    GOAL 3: Good Health and Well-being
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="sdg4" >
+                                <label class="form-check-label" for="sdg4">
+                                    GOAL 4: Quality Education
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="sdg5" >
+                                <label class="form-check-label" for="sdg5">
+                                    GOAL 5: Gender Equality
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="sdg6" >
+                                <label class="form-check-label" for="sdg6">
+                                    GOAL 6: Clean Water and Sanitation
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="sdg7" >
+                                <label class="form-check-label" for="sdg7">
+                                    GOAL 7: Affordable and Clean Energy
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="sdg8" >
+                                <label class="form-check-label" for="sdg8">
+                                    GOAL 8: Decent Work and Economic Growth
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="sdg9" >
+                                <label class="form-check-label" for="sdg9">
+                                    GOAL 9: Industry, Innovation and Infrastructure
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="sdg10" >
+                                <label class="form-check-label" for="sdg10">
+                                    GOAL 10: Reduced Inequality
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="sdg11" >
+                                <label class="form-check-label" for="sdg11">
+                                    GOAL 11: Sustainable Cities and Communities
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="sdg12" >
+                                <label class="form-check-label" for="sdg12">
+                                    GOAL 12: Responsible Consumption and Production
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="sdg13" >
+                                <label class="form-check-label" for="sdg13">
+                                    GOAL 13: Climate Action
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="sdg14" >
+                                <label class="form-check-label" for="sdg14">
+                                    GOAL 14: Life Below Water
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="sdg15" >
+                                <label class="form-check-label" for="sdg15">
+                                    GOAL 15: Life on Land
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="sdg16" >
+                                <label class="form-check-label" for="sdg16">
+                                    GOAL 16: Peace and Justice Strong Institutions
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="sdg17" >
+                                <label class="form-check-label" for="sdg17">
+                                    GOAL 17: Partnerships to achieve the Goal
+                                </label>
+                            </div>
+                        </div>
+                        <input type="button" class="btn btn-info" value="Learn More" onclick="open_modal(10, 'curriculum_modal')">
+
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
 
 
         <!--MODAL-->

@@ -76,4 +76,3 @@ class Curriculum{
         this._c10 = value;
     }
 }
-
