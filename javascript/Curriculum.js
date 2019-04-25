@@ -76,3 +76,15 @@ class Curriculum{
         this._c10 = value;
     }
 }
+
+function post_curriculum(){
+    let doc = document.URL;
+    $.ajax({
+        type:"POST",
+        url:doc,
+        success: function () {
+            alert("test")
+
+        }
+    });
+}

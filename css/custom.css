@@ -28,3 +28,21 @@ p{
 h4{
     padding-top: 10px;
 }
+
+.w3-bar .cur-bar-item{
+    padding:8px 10px;
+    float:left;
+    width:10%;
+    border:none;
+    display:block;
+    outline:0
+}
+
+.w3-bar .res-bar-item{
+    padding:8px 16px;
+    float:left;
+    width: 11.11%;
+    border:none;
+    display:block;
+    outline:0
+}
