@@ -78,10 +78,10 @@ class Curriculum{
 }
 
 function post_curriculum(){
-    let doc = document.URL;
+    let URL = ${document.location.protocol} //${document.location.hostname}${document.location.pathname}
     $.ajax({
         type:"POST",
-        url:doc,
+        url:URL,
         success: function () {
             alert("test")
 
