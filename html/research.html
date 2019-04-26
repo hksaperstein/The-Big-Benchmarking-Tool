@@ -4,6 +4,7 @@
 <script src="../javascript/modals.js"></script>
 <script src="../javascript/Module.js"></script>
 <script src="../javascript/Research.js"></script>
+<script src="../javascript/research_functions.js"></script>
 <html lang="en">
 
     <head>
@@ -38,7 +39,7 @@
                        target="_blank">SDGs</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="https://www2.worc.ac.uk/informationassurance" target="_blank">Disclaimer</a>
+                    <a class="nav-link" href="https://www2.worc.ac.uk/informationassurance" target="_blank">Privacy Policy</a>
                 </li>
             </ul>
         </div>
@@ -89,8 +90,9 @@
                         contract funded research at the institution.
                     </p>
                     <div class="d-flex align-items-center p-2">
-                        <input type="number" placeholder="Percentage" step=".1">
+                        <input type="number" id="r1_answer" placeholder="Percentage" step=".1">
                         <input type="button" class="btn btn-info" value="Learn More" onclick="open_modal(1, 'research_modal')">
+                        <p id="r1_score"></p>
                     </div>
                 </div>
         
@@ -101,8 +103,9 @@
                         research publications in all areas
                     </p>
                     <div class="d-flex align-items-center p-2">
-                        <input type="number" placeholder="Percentage" step=".1">
+                        <input type="number" id="r2_answer" placeholder="Percentage" step=".1">
                         <input type="button" class="btn btn-info" value="Learn More" onclick="open_modal(2, 'research_modal')">
+                        <p id="r2_score"></p>
                     </div>
                 </div>
         
@@ -114,8 +117,9 @@
                     </p>
                     <div class="d-flex align-items-center p-2">
         
-                        <input type="number" placeholder="Percentage" step=".1">
+                        <input type="number" id="r3_answer" placeholder="Percentage" step=".1">
                         <input type="button" class="btn btn-info" value="Learn More" onclick="open_modal(3, 'research_modal')">
+                        <p id="r3_score"></p>
                     </div>
                 </div>
         
@@ -126,12 +130,14 @@
                         sustainability research, relative to the total number of academic departments.
                     </p>
                     <div class="d-flex align-items-center p-2">
-                        <input type="number" placeholder="Percentage" step=".1">
+                        <input type="number" placeholder="Percentage" step=".1" id="r4_answer">
                         <input type="button" class="btn btn-info" value="Learn More" onclick="open_modal(4, 'research_modal')">
-        
+                        <p id="r4_score"></p>
                     </div>
                 </div>
+
                 <h3> Informal Research </h3>
+
                 <div class="d-flex flex-column align-items-center form-group">
                     <h4> R5 </h4>
                     <p>
@@ -139,15 +145,16 @@
                         research?
                     </p>
                     <div class="d-flex align-items-center p-2">
-                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                        <div class="btn-group btn-group-toggle" data-toggle="buttons" id="r5_answer">
                             <label class="btn btn-info">
-                                <input type="radio" class="btn btn-info" name="yes" value="Yes">Yes
+                                <input type="radio" o class="btn btn-info" name="r5_answer" value="Yes">Yes
                             </label>
                             <label class="btn btn-info">
-                                <input type="radio" class="btn btn-info" value="No">No
+                                <input type="radio" class="btn btn-info" name="r5_answer" value="No">No
                             </label>
                         </div>
                         <input type="button" class="btn btn-info" value="Learn More" onclick="open_modal(5, 'research_modal')">
+                        <p id="r5_score"></p>
                     </div>
                 </div>
         
@@ -159,13 +166,14 @@
                     <div class="d-flex align-items-center p-2">
                         <div class="btn-group btn-group-toggle" data-toggle="buttons">
                             <label class="btn btn-info">
-                                <input type="radio" class="btn btn-info" name="yes" value="Yes">Yes
+                                <input type="radio" class="btn btn-info" name="r6_answer" value="Yes">Yes
                             </label>
                             <label class="btn btn-info">
-                                <input type="radio" class="btn btn-info" value="No">No
+                                <input type="radio" class="btn btn-info" name="r6_answer" value="No">No
                             </label>
                         </div>
                         <input type="button" class="btn btn-info" value="Learn More" onclick="open_modal(6, 'research_modal')">
+                        <p id="r6_score"></p>
                     </div>
                 </div>
                 <div class="d-flex flex-column align-items-center form-group">
@@ -176,13 +184,14 @@
                     <div class="d-flex align-items-center p-2">
                         <div class="btn-group btn-group-toggle" data-toggle="buttons">
                             <label class="btn btn-info">
-                                <input type="radio" class="btn btn-info" name="yes" value="Yes">Yes
+                                <input type="radio" class="btn btn-info" name="r7_answer" value="Yes">Yes
                             </label>
                             <label class="btn btn-info">
-                                <input type="radio" class="btn btn-info" value="No">No
+                                <input type="radio" class="btn btn-info" name="r7_answer" value="No">No
                             </label>
                         </div>
                         <input type="button" class="btn btn-info" value="Learn More" onclick="open_modal(7, 'research_modal')">
+                        <p id="r7_score"></p>
                     </div>
                 </div>
         
@@ -196,13 +205,14 @@
                     <div class="d-flex align-items-center p-2">
                         <div class="btn-group btn-group-toggle" data-toggle="buttons">
                             <label class="btn btn-info">
-                                <input type="radio" class="btn btn-info" name="yes" value="Yes">Yes
+                                <input type="radio" class="btn btn-info" name="r8_answer" value="Yes">Yes
                             </label>
                             <label class="btn btn-info">
-                                <input type="radio" class="btn btn-info" value="No">No
+                                <input type="radio" class="btn btn-info" name="r8_answer" value="No">No
                             </label>
                         </div>
                         <input type="button" class="btn btn-info" value="Learn More" onclick="open_modal(8, 'research_modal')">
+                        <p id="r8_score"></p>
                     </div>
                 </div>
         
@@ -215,17 +225,19 @@
                     <div class="d-flex align-items-center p-2">
                         <div class="btn-group btn-group-toggle" data-toggle="buttons">
                             <label class="btn btn-info">
-                                <input type="radio" class="btn btn-info" name="yes" value="Yes">Yes
+                                <input type="radio" class="btn btn-info" name="r9_answer" value="Yes">Yes
                             </label>
                             <label class="btn btn-info">
-                                <input type="radio" class="btn btn-info" value="No">No
+                                <input type="radio" class="btn btn-info" name="r9_answer" value="No">No
                             </label>
                         </div>
                         <input type="button" class="btn btn-info" value="Learn More" onclick="open_modal(9, 'research_modal')">
+                        <p id="r9_score"></p>
                     </div>
                 </div>
             </form>
-        </div>
+            <p id="r_score"></p>
+            <input type="button" style="margin: 0 0 100px 0;" class="btn btn-info" value="Submit" onclick="r_total_output()">
         </div>
         
         
@@ -238,7 +250,7 @@
                        <span onclick="document.getElementById('research_modal').style.display='none'"  class="w3-button w3-blue  w3-display-topright">
                            &times;
                        </span>
-                        <h2>Curriculum</h2>
+                        <h2>Research</h2>
                     </header>
 
                     <div class="w3-bar w3-border-bottom">
@@ -256,79 +268,149 @@
                     <div id="r1_modal" class="w3-container question">
                         <h1>R1</h1>
                         <p>
+                            <b>Question:</b><br>
                             Percentage of modules that include SDG-related topics or themes, relative to the total number of modules offered at the institution.
                         </p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <p>
+                            <b>How to answer:</b><br>
+                            This question can be answered by contacting the research coordinator of an institution. This may require some dialogue to fully explain the question and what sustainability related means since you will most likely not be allowed to see the grants and funding for research.
+                            The Final answer should be a percentage of total sustainability research being funded out of total funded research. Looking for amount of research/amount of research.
+                        </p>
+                        <p>
+                            <b>Description of what this question is hoping to gather:</b><br>
+                            This question looks at the funded research at the institution which is an important part of the research because funding allows the potential for research to have a greater impact.
+                        </p>
                     </div>
 
                     <div id="r2_modal" class="w3-container question">
                         <h1>R2</h1>
                         <p>
-                            Percentage of courses that include SDG-related modules relative to the total number of undergraduate courses offered at the institution.
+                            <b>Question:</b><br>
+                            Percentage of published research articles with a focus on sustainability-related issues, relative to the total number of research publications in all areas, as a percentage.                        </p>
+                        <p>
+                            <b>How to answer:</b><br>
+                            For this question to be answered, the published research articles at your university should be placed in a .JSON file consisting of at the minimum, the titles and abstracts of each article. This can either be downloaded off of your research and publications database or by contacting your research department. Then the software can be run on the file.
                         </p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <p>
+                            <b>Description of what this question is hoping to gather:</b><br>
+                            Using sustainability keywords, this question scans titles and abstracts for the amount of sustainability related research publications.                        </p>
                     </div>
 
                     <div id="r3_modal" class="w3-container question">
                         <h1>R3</h1>
                         <p>
-                            Percentage of undergraduate students who have taken an SDG-related module in the current year in relation to total number of students enrolled at the institution.
+                            <b>Question:</b><br>
+                            Percentage of the institution’s academic staff that are currently engaged in sustainability research, relative to the total amount of academic staff who conduct research, as a percentage.
                         </p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <p>
+                            <b>How to answer:</b><br>
+                            This question is answered using the same file gathered for the previous question.
+                        </p>
+                        <p>
+                            <b>Description of what this question is hoping to gather:</b><br>
+                            This question gathers the percentage of faculty that conduct sustainability-related research.
+                        </p>
                     </div>
 
                     <div id="r4_modal" class="w3-container question">
                         <h1>R4</h1>
                         <p>
-                            Percentage of modules taken by students that include SDG-related topics or themes relative to the total number of modules taken by students.
+                            <b>Question:</b><br>
+                            Percentage of academic departments that include at least one academic staff member that conducts sustainability research compared to other areas of research, relative to the total number of academic departments, as a percentage.
                         </p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <p>
+                            <b>How to answer:</b><br>
+                            This question is answered using the same file gathered for the two previous questions. The software outputs a list of the faculty that had published a sustainability-related article in the last year. This list should be cross checked with a list of faculty in each department. If at least one author from the sustainability list is included in the faculty for the department then that department has a staff member. A percentage should be calculated of the those departments found out of the total number of departments.
+                        </p>
+                        <p>
+                            <b>Description of what this question is hoping to gather:</b><br>
+                            Hopefully, every department has at least one staff member that is conducting sustainability research. Sustainability is an overarching idea that can be contributed to by many different disciplines. Every department can contribute to sustainability in their own way.                        </p>
                     </div>
 
                     <div id="r5_modal" class="w3-container question">
                         <h1>R5</h1>
                         <p>
-                            How many student organizations exist with a purpose related to one of the SDGs?
+                            <b>Question:</b><br>
+                            Does the institution have one or more research centres or groups on campus focusing on sustainability-related research or services?
                         </p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <p>
+                            <b>How to answer:</b><br>
+                            Research Centres and Groups are a collection of researchers that focus their efforts in one particular area or field. They are considered sustainability-related if their research directly relates to one of the Sustainable Development Goals. The keywords we have provided can be used if the topic can not be immediately decided as sustainability-related. The head of your sustainability may be able to answer this question with or without the help of the university’s website. If not, then the head of the research department at your university can be contacted.
+                        </p>
+                        <p>
+                            <b>Description of what this question is hoping to gather:</b><br>
+                            It is important for students and faculty who are interested in involving themselves in sustainability research are assisted in doing so.  This question looks to see if there are services at the institution with the purpose of assisting with this.
+                        </p>
                     </div>
 
                     <div id="r6_modal" class="w3-container question">
                         <h1>R6</h1>
                         <p>
-                            Have you or other sustainability-related faculty updated the sustainability website in the last 6 months?
+                            <b>Question:</b><br>
+                            Does the institution have an ongoing program to encourage students in multiple disciplines or academic programs to conduct research in sustainability?
                         </p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <p>
+                            <b>How to answer:</b><br>
+                            The head of your sustainability should answer this question. If not, then the head of the research department at your university may be able.
+                        </p>
+                        <p>
+                            <b>Description of what this question is hoping to gather:</b><br>
+                            Student involvement in research is important. Students can also provide a lot of help to researchers while learning more about sustainability.
+                        </p>
                     </div>
 
                     <div id="r7_modal" class="w3-container question">
                         <h1>R7</h1>
                         <p>
-                            How many SDG-focused educational programs or events engaged the students in the last year?
+                            <b>Question:</b><br>
+                            Does the institution have a program to encourage academic staff from multiple disciplines or academic programs to conduct research in sustainability topics? (To count, the program must provide faculty with incentives to research sustainability and specifically aim to increase faculty sustainability research)
                         </p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <p>
+                            <b>How to answer:</b><br>
+                            The head of your sustainability should answer this question. If not, then the head of the research department at your university may be able.
+                        </p>
+                        <p>
+                            <b>Description of what this question is hoping to gather:</b><br>
+                            It is important for researchers from all types of disciplines to conduct sustainability research. This question gathers whether the institution provides incentives for conducting this research as a way of showing its commitment to institution-wide sustainability.
+                        </p>
                     </div>
 
                     <div id="r8_modal" class="w3-container question">
                         <h1>R8</h1>
                         <p>
-                            Does the university conduct a formal assessment of the sustainability literacy and knowledge of its students?
+                            <b>Question:</b><br>
+                            Does the institution have ongoing library support for sustainability research and learning in the form of research guides, materials selection policies and practices, curriculum development efforts, sustainability literacy promotion, and/or e-learning objects focused on sustainability?
                         </p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <p>
+                            <b>How to answer:</b><br>
+                            Contact your library and ask whether they have guides that focus on SDG-related topics. SDG related topics are those that fit into one of the 17 Sustainable Development Goals. Keywords related to the SDGs can be found on the keywords tab and the SDGs are linked to above.
+                        </p>
+                        <p>
+                            <b>Description of what this question is hoping to gather:</b><br>
+                            SDG-related resources show that the university is interested in informing their students about sustainability.  Sustainability resources allow students who are interested in sustainability projects or research to have access to the information they need for their work.
+                        </p>
                     </div>
 
                     <div id="r9_modal" class="w3-container question">
                         <h1>R9</h1>
                         <p>
-                            Does the university have an ongoing program that offers incentives for academic staff to develop new SDG-related modules and/or incorporate the SDGs into existing modules?
+                            <b>Question:</b><br>
+                            Does the institution provide financial incentives to support open access publishing, e.g., a publishing fund to support faculty members with article processing and other open access publication charges?
                         </p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <p>
+                            <b>How to answer:</b><br>
+                            The head of your research department should be able to answer this question
+                        </p>
+                        <p>
+                            <b>Description of what this question is hoping to gather:</b><br>
+                            Open access publishing allows greater numbers of people to access research. Learning about sustainability through specific research interests would expand sustainability research into the world.
+                        </p>
                     </div>
 
 
                     <div class="w3-container w3-light-grey w3-padding">
                         <button class="w3-button w3-right w3-white w3-border"
-                                onclick="document.getElementById('curriculum_modal').style.display='none'">Close</button>
+                                onclick="document.getElementById('research_modal').style.display='none'">Close</button>
                     </div>
                 </div>
             </div>

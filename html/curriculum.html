@@ -47,12 +47,11 @@
                     <a class="nav-link" href="https://www.un.org/sustainabledevelopment/sustainable-development-goals" target="_blank">SDGs</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="https://www2.worc.ac.uk/informationassurance" target="_blank">Disclaimer</a>
+                    <a class="nav-link" href="https://www2.worc.ac.uk/informationassurance" target="_blank">Privacy Policy</a>
                 </li>
             </ul>
         </div>
 
-        <input type="button" value="ajax" onclick="post_curriculum()">
         <div class="d-flex flex-column align-items-center px-5">
             <h1> Curriculum Tool </h1>
             <p>
@@ -62,7 +61,7 @@
 
 
 
-            <form class="px-5 pb-5 d-flex flex-column align-items-center">
+            <form id="curriculum_tool" class="px-5 pb-5 d-flex flex-column align-items-center">
 
                 <h2>Formal Curriculum</h2>
                 <p id="formal_curriculum">
@@ -315,6 +314,7 @@
                     </div>
                 </div>
             </form>
+            <input type="button" id="curriculum_tool_submit" onclick="run_curriculum()">
         </div>
 
 

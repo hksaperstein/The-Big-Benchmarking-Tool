@@ -250,7 +250,7 @@ function parse_json(json){
         sdg_count.research_element_count += 1;
 
 
-        if(research_element.type === "article" || research_element.type === "thesis" || research_element.type === "book" || research_element.type === "conference_item" || research_element.type === "book_section" || research_element.type === "report") {
+        // if(research_element.type === "article" || research_element.type === "thesis" || research_element.type === "book" || research_element.type === "conference_item" || research_element.type === "book_section" || research_element.type === "report") {
             // console.log(research_element.authors)
             for(let i = 0; i < research_element.authors.length; i++){
                 // console.log(research_element.authors[i]);
@@ -377,12 +377,16 @@ function parse_json(json){
                 }
                 sdg_count.researchWSDG_count[research_element.numSDG] += 1
 
-        }
+        // }
 
 
     }
     sdg_count.total_authors += total_author_set.size;
     sdg_count.total_sus_authors += total_sus_author_set.size;
+
+    document.getElementById("r2_answer").value = (100*(sdg_count.sustainability_count/sdg_count.research_element_count));
+    document.getElementById("r3_answer").value = (100*(sdg_count.total_sus_authors/sdg_count.total_authors));
+
     // console.log(sdg_count.sustainability_count);
     // console.log(sdg_count.research_element_count);
     console.log(sdg_count);
@@ -396,7 +400,7 @@ function create_research(json_element) {
     let research_element = new Research();
     research_element.type = json_element.type;
     for(let i = 0; i < json_element.creators.length; i++){
-        console.log(json_element.creators[i]);
+        // console.log(json_element.creators[i]);
         research_element.authors.push(json_element.creators[i].name.given + ' ' +json_element.creators[i].name.family);
     }
 
