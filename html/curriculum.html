@@ -23,8 +23,27 @@
         <!--<script src="../javascript/Module.js"></script>-->
 
         <title>Curriculum Tool</title>
+        <style>
+            table {
+                margin: 15px;
+                font-family: arial, sans-serif;
+                border-collapse: collapse;
+                width: 100%;
+            }
 
+            td, th {
+                border: 1px solid #dddddd;
+                text-align: left;
+                padding: 8px;
+            }
+
+            tr:nth-child(even) {
+                background-color: #dddddd;
+            }
+        </style>
     </head>
+
+
     <body onload="disclaimer('curriculum')">
         <div class="sticky-top">
             <ul class="nav nav-tabs justify-content-end">
@@ -70,13 +89,18 @@
                     This can either be gathered yourself or by contacting your university’s registrar or data management unit.
                 </p>
                 <p>
-                    The tool is run on a csv file of consisting of the module codes, module titles, and module descriptions for all undergraduate modules.
+                    The tool is run on a csv file of consisting ONLY of the module codes, module titles, and module descriptions for all undergraduate modules.
                     This can either be gathered yourself or by contacting your university’s registrar or data management unit.
                 </p>
                 <h3> Insert curriculum module directory (.csv): </h3>
                 <div class="d-flex justify-content-center">
                     <input id="curriculum_file" type="file" name="curriculum_file" accept=".csv">
                     <input id="curriculum_file_submit" class="btn btn-info" value="Run Keyword Analyzing Software" type="button" onclick="parse_csv()">
+                </div>
+                <div >
+                    <table id="sus_table">
+                        <tr><td>Module Code</td><td>Module Title</td><td>Module Description</td></tr>
+                    </table>
                 </div>
                 <div class="d-flex flex-column align-items-center form-group">
                     <h4> C1 </h4>
@@ -359,81 +383,164 @@
                     <div id="c1_modal" class="w3-container question">
                         <h1>C1</h1>
                         <p>
+                            <b>Question:</b><br>
                             Percentage of modules that include SDG-related topics or themes, relative to the total number of modules offered at the institution.
                         </p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <p>
+                            <b>How to answer:</b><br>
+                            Please upload a .csv file of consisting ONLY of the module codes, module titles, and module descriptions (in that order) for all undergraduate modules.
+                            This can either be gathered yourself or by contacting your university’s registrar or data management unit.
+                            For proper formatting you can open the file in excel and place 'module codes' at column 1, 'module titles' at column 2 and 'module descriptions at column 3.
+                        </p>
+                        <p>
+                            <b>Description of what this question is hoping to gather:</b><br>
+                            This question gathers a percentage of the modules related to sustainability for use by the sustainability department of your university.
+                        </p>
                     </div>
 
                     <div id="c2_modal" class="w3-container question">
                         <h1>C2</h1>
                         <p>
+                            <b>Question:</b><br>
                             Percentage of courses that include SDG-related modules relative to the total number of undergraduate courses offered at the institution.
                         </p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <p>
+                            <b>How to answer:</b><br>
+                            The same software that you ran above also returned a percentage of the number of courses that are related to sustainability at your university.
+                        </p>
+                        <p>
+                            <b>Description of what this question is hoping to gather:</b><br>
+                            This question is hoping to gather the number of students who have taken at least one sustainability related module in the last year. One major goal of this tool is to provide information so that universities can increase the number of students learning about sustainability.
+                        </p>
                     </div>
 
                     <div id="c3_modal" class="w3-container question">
                         <h1>C3</h1>
                         <p>
+                            <b>Question:</b><br>
                             Percentage of undergraduate students who have taken an SDG-related module in the current year in relation to total number of students enrolled at the institution.
                         </p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <p>
+                            <b>How to answer:</b><br>
+                            The software returns a list of modules that are related to sustainability. This list can be sent to either your registrar or data management unit depending on who holds the data. Both C3 and C4 will be answered by the same people. C3 should be sent with the question: “How many students have taken one of the attached modules, with duplicates of students who have taken multiple of these modules removed, in relation to the total number of undergraduate students, as a percentage?”
+                        <p>
+                            <b>Description of what this question is hoping to gather:</b><br>
+                        This question is hoping to gather the number of students who have taken at least one sustainability related module in the last year. One major goal of this tool is to provide information so that universities can increase the number of students learning about sustainability.
+                    </p>
                     </div>
 
                     <div id="c4_modal" class="w3-container question">
                         <h1>C4</h1>
                         <p>
+                            <b>Question:</b><br>
                             Percentage of modules taken by students that include SDG-related topics or themes relative to the total number of modules taken by students.
                         </p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <p>
+                            <b>How to answer:</b><br>
+
+                            This question is also answered by your registrar or data management unit depending on who holds the data. It should be sent with the question: “How many instances of sustainability modules are taken in comparison to the total number of module instances? For example, if 1 student took 4 sustainability modules out of a possible 8 total modules a year and a different student took 0 sustainability modules out of 8, the answer would be 4/16 or 25%.                        </p>
+                        <p>
+                            <b>Description of what this question is hoping to gather:</b><br>
+                            C4 is meant to take into account how many students have taken more than one module in sustainability. This means that all instances of a module are included in the result of this question. This results in a percentage that is also weighted based on class sizes. There can be a large number of sustainability related modules but maybe only one or two students are taking them.
+                        </p>
                     </div>
 
                     <div id="c5_modal" class="w3-container question">
                         <h1>C5</h1>
                         <p>
+                            <b>Question:</b><br>
                             How many student organizations exist with a purpose related to one of the SDGs?
                         </p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <p>
+                            <b>How to answer:</b><br>
+
+                            This question can be answered either by the head of your sustainability department, by someone in the student union, or by looking at a list of student organizations. Student organizations are considered related to sustainability if they have a focus with relates to one of the Sustainable Development Goals. The list of keywords provided can be used if needed to relate student organizations to sustainability.
+                        </p>
+                        <p>
+                            <b>Description of what this question is hoping to gather:</b><br>
+                            Students can learn about sustainability outside of the classroom. More clubs that are related to sustainability means that more students are able to be involved with sustainability efforts around the university.
+                        </p>
                     </div>
 
                     <div id="c6_modal" class="w3-container question">
                         <h1>C6</h1>
                         <p>
+                            <b>Question:</b><br>
                             Have you or other sustainability-related faculty updated the sustainability website in the last 6 months?
                         </p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <p>
+                            <b>How to answer:</b><br>
+
+                            This question is considered to be an answer of yes if the university has a subdomain or different domain related to sustainability that sustainability faculty have updated within the last six months.
+                        </p>
+                        <p>
+                            <b>Description of what this question is hoping to gather:</b><br>
+                            Sustainable Development is constantly changing and universities need to update the public on what they are doing to contribute to sustainability in  the world.
+                        </p>
                     </div>
 
                     <div id="c7_modal" class="w3-container question">
                         <h1>C7</h1>
                         <p>
+                            <b>Question:</b><br>
                             How many SDG-focused educational programs or events engaged the students in the last year?
                         </p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <p>
+                            <b>How to answer:</b><br>
+                            This question can be answered either by the head of your sustainability department, by someone in the student union, or by looking at a list of student events. Student programs are considered related to sustainability if they have a focus with relates to one of the Sustainable Development Goals. The list of keywords provided can be used if needed to relate student events to sustainability.
+                        </p>
+                        <p>
+                            <b>Description of what this question is hoping to gather:</b><br>
+                            Sustainability-focused educational programs and events allow for students to learn about sustainability without necessarily committing to a module or student organization.  Having more of these events allows more opportunity for students to get involved in sustainability.
+                        </p>
                     </div>
 
                     <div id="c8_modal" class="w3-container question">
                         <h1>C8</h1>
                         <p>
+                            <b>Question:</b><br>
                             Does the university conduct a formal assessment of the sustainability literacy and knowledge of its students?
                         </p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <p>
+                            <b>How to answer:</b><br>
+                            This question can be answered by the head of sustainability at your university.
+                        </p>
+                        <p>
+                            <b>Description of what this question is hoping to gather:</b><br>
+                            A literacy test is a good way to measure how much your students are actually learning about sustainability. The number of modules that are sustainability-related and which students are taking them matter more if students are learning from them.
+                        </p>
                     </div>
 
                     <div id="c9_modal" class="w3-container question">
                         <h1>C9</h1>
                         <p>
+                            <b>Question:</b><br>
                             Does the university have an ongoing program that offers incentives for academic staff to develop new SDG-related modules and/or incorporate the SDGs into existing modules?
                         </p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <p>
+                            <b>How to answer:</b><br>
+                            The head of your research department should be able to answer this question
+                        </p>
+                        <p>
+                            <b>Description of what this question is hoping to gather:</b><br>
+                            Increasing the amount of sustainability in modules or creating new sustainability modules is very important. Incentives for staff to make more modules would increase how quickly modules are made and make sure that students are getting the most out of their educations sooner rather than years from now.
+                        </p>
                     </div>
 
                     <div id="c10_modal" class="w3-container question">
                         <h1>C10</h1>
                         <p>
+                            <b>Question:</b><br>
                             How many of the Sustainable Development Goals does the institution expose the students to outside of the classroom i.e. buildings, year-round events, or programs?
                         </p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <p>
+                            <b>How to answer:</b><br>
+                            This question should be answerable by the head of your sustainability department and using your university’s website. This question is hoping to gather the areas of sustainability present at a university that a student can learn outside a classroom, either by visiting a location with a focus on one of these areas or through a program that shows what a university is working on with regards to sustainability.
+                        </p>
+                        <p>
+                            <b>Description of what this question is hoping to gather:</b><br>
+                            This question is rather open-ended to allow universities to show the extent that they are using their campuses as living laboratories. Estate management is important to a university’s sustainability efforts and many of the efforts that are made would be more valuable if their effects were taught to students. For example, universities may use renewable energy such as solar panels which are a great sustainability effort. However, students may not learn about the solar panels and how the university is trying to improve itself in the sustainability area of energy. If students had the ability to visit the solar panels and learn about the energy they produce, then they would be receiving hand-on instruction in sustainability. A program about sustainable financial investments the universities make would match with the Investment & Finance area.
+                        </p>
                     </div>
 
 

@@ -1,3 +1,4 @@
+
 class Module{
     constructor(code=null,title=null, description=null, numSDG=0, SDGs=[]) {
         this.code = code;
@@ -86,6 +87,9 @@ function parse_csv(){
 }
 
 function parse_keywords(modules){
+
+
+
 
     let keywordList = ["\\bDeveloping Countries", "Economic Resources", "Equality", "Financial Inclusion",
         "Income Equality", "Inequality", "Overuse Of Resource", "Poverty", "Quality Of Life", "Resource Efficiency",
@@ -262,14 +266,29 @@ function parse_keywords(modules){
         "sdg16": [],
         "sdg17": [],
     };
-    let sus_courses = Set();
-
+    let total_courses = new Set();
+    let sus_courses = new Set();
+    let sus_table = document.getElementById("sus_table");
     for(let i = 0; i < modules.length; i++){
 
         let module = modules[i];
         sdg_count.module_count += 1;
+        total_courses.add(module.code.substr(0, 5));
         if(keywordRegex.test(module.description) | keywordRegex.test(module.title)){
             sdg_count.sustainability_count += 1;
+            sus_courses.add(module.code.substr(0, 5));
+            let row = sus_table.insertRow(-1);
+
+            // Insert new cells (<td> elements) at the 1st and 2nd position of the "new" <tr> element:
+            let cell1 = row.insertCell(0);
+            let cell2 = row.insertCell(1);
+            let cell3 = row.insertCell(2);
+
+
+            // Add some text to the new cells:
+            cell1.innerHTML = module.code;
+            cell2.innerHTML = module.title;
+            cell3.innerHTML = module.description;
         }
 
         if(sdg1Regex.test(module.description) | sdg1Regex.test(module.title)){
@@ -383,9 +402,9 @@ function parse_keywords(modules){
 
 
     }
-
+    console.log(total_courses, sus_courses);
     document.getElementById("c1_answer").value = (100*(sdg_count.sustainability_count/sdg_count.module_count));
-    document.getElementById("c2_answer").value = (100*(sdg_count.total_sus_authors/sdg_count.total_authors));
+    document.getElementById("c2_answer").value = 100 * sus_courses.size/total_courses.size;
 
 
     console.log(sdg_count.sustainability_count);
