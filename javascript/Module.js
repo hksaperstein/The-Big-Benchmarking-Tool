@@ -262,6 +262,7 @@ function parse_keywords(modules){
         "sdg16": [],
         "sdg17": [],
     };
+    let sus_courses = Set();
 
     for(let i = 0; i < modules.length; i++){
 
@@ -382,6 +383,11 @@ function parse_keywords(modules){
 
 
     }
+
+    document.getElementById("c1_answer").value = (100*(sdg_count.sustainability_count/sdg_count.module_count));
+    document.getElementById("c2_answer").value = (100*(sdg_count.total_sus_authors/sdg_count.total_authors));
+
+
     console.log(sdg_count.sustainability_count);
     console.log(sdg_count.module_count);
     console.log(sdg_count);
